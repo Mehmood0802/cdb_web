@@ -1,0 +1,499 @@
+.y-bs{
+  box-sizing: border-box;
+}
+.y-bc{
+  box-sizing: content-box;
+}
+/*浮动定位层级*/
+.y-fl{
+  float: left;
+}
+.y-fr{
+  float: right;
+}
+.y-fc{
+  clear: both;
+}
+.y-z1{
+  z-index: 1;
+}
+.y-z2{
+  z-index: 2;
+}
+.y-z3{
+  z-index: 3;
+}
+.y-z6{
+  z-index: 6;
+}
+.y-z9{
+  z-index: 9;
+}
+.y-psr{
+  position: relative;
+}
+.y-psa{
+  position: absolute;
+}
+.y-psf{
+  position: fixed;
+}
+/*内边距*/
+.y-p{
+  padding: 10px;
+}
+.y-pl{
+  padding-left: 10px;
+}
+.y-pr{
+  padding-right: 10px;
+}
+.y-pt{
+  padding-top: 10px;
+}
+.y-pb{
+  padding-bottom: 10px;
+}
+.y-p5{
+  padding: 5px;
+}
+.y-pl5{
+  padding-left: 5px;
+}
+.y-pr5{
+  padding-right: 5px;
+}
+.y-pt5{
+  padding-top: 5px;
+}
+.y-pb5{
+  padding-bottom: 5px;
+}
+/*布局*/
+.y-fx{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.y-fx1{
+  flex:1;
+}
+.y-fx2{
+  flex:2;
+}
+.y-fx3{
+  flex:3;
+}
+.y-fx4{
+  flex:4;
+}
+.y-fx5{
+  flex:5;
+}
+.y-fx6{
+  flex:6;
+}
+.y-fx7{
+  flex:7;
+}
+.y-fx8{
+  flex:8;
+}
+.y-fx10{
+  flex:10;
+}
+.y-fx12{
+  flex:12;
+}
+/*文本对齐排版*/
+.y-ft0{
+  font-size: 0px;
+}
+.y-ft8{
+  font-size: 8px;
+}
+.y-ft10{
+  font-size: 10px;
+}
+.y-ft12{
+  font-size: 12px;
+}
+.y-ft14{
+  font-size: 14px;
+}
+.y-ft16{
+  font-size: 16px;
+}
+.y-ft18{
+  font-size: 18px;
+}
+.y-ft20{
+  font-size: 20px;
+}
+.y-ft22{
+  font-size: 22px;
+}
+.y-ft25{
+  font-size: 25px;
+}
+.y-ft30{
+  font-size: 30px;
+}
+.y-ft40{
+  font-size: 40px;
+}
+.y-fw{
+  font-weight: bold;
+}
+.y-mc1{
+  color: #409EFF;
+}
+.y-mc2{
+  color: #67C23A;
+}
+.y-mc3{
+  color: #AAAAAA;
+}
+.y-mc4{
+  color: #F56C6C;
+}
+.y-mc5{
+  color: #666666;
+}
+.y-mc6{
+  color: #ffffff;
+}
+.y-mc7{
+  color: #333333;
+}
+.y-mc8{
+  color: #01B9F5;
+}
+.y-mc9{
+  color: #999999;
+}
+/*背景色*/
+.y-bg1{
+  background: #01B9F5;
+}
+.y-bg2{
+  background: #67C23A;
+}
+.y-bg3{
+  background: #F6BE1E;
+}
+.y-bg4{
+  background: #F56C6C;
+}
+.y-bg5{
+  background: #909399;
+}
+.y-bg6{
+  background: #ffffff;
+}
+.y-bg7{
+  background: #303133;
+}
+.y-bg8{
+  background: #F3F9FF;
+}
+.y-al{
+  text-align: left;
+}
+.y-ar{
+  text-align: right;
+}
+.y-ac{
+  text-align: center;
+}
+.y-aj{
+  text-align: justify;
+}
+.y-ofh{
+  overflow: hidden;
+}
+.y-ofs{
+  overflow: scroll;
+}
+.y-ofs-x{
+  overflow-x: scroll;
+}
+.y-ofs-y{
+  overflow-y: scroll;
+}
+.y-in{
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+}
+.y-e1{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.y-e2{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+/*边框*/
+.y-b{
+  border: 1px solid #e4e4e4;
+}
+.y-bt{
+  border-top: 1px solid #e4e4e4;
+}
+.y-bl{
+  border-left: 1px solid #e4e4e4;
+}
+.y-br{
+  border-right: 1px solid #e4e4e4;
+}
+.y-bb{
+  border-bottom: 1px solid #e4e4e4;
+}
+
+/*外边距*/
+.y-mga{
+  margin: auto;
+}
+.y-mg{
+  margin: 10px;
+}
+.y-mgt{
+  margin-top: 10px;
+}
+.y-mgb{
+  margin-bottom: 10px;
+}
+.y-mgl{
+  margin-left: 10px;
+}
+.y-mgr{
+  margin-right: 10px;
+}
+/* 鼠标手势 */
+.y-cp{
+  cursor: pointer;
+}
+.y-w100{
+  width: 100%;
+}
+.y-h100{
+  height: 100%;
+}
+.y-box-b{
+  padding-bottom: 50px;
+}
+.y-box-t{
+  padding-top: 50px;
+}
+.y-cc{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  line-height: 40px;
+}
+.y-lh{
+  height: 26px;
+  line-height: 26px;
+}
+.mj-btn1{
+  height: 25px;
+  line-height: 25px;
+  border-radius: 5px;
+}
+.select{
+  user-select:none;
+}
+.h300{
+  height: 300px;
+}
+.h200{
+  height: 200px;
+}
+.h150{
+  height: 150px;
+}
+.h110{
+  height: 110px;
+}
+.h100{
+  height: 100px;
+}
+.h80{
+  height: 80px;
+}
+.h60{
+  height: 60px;
+}
+.h50{
+  height: 50px;
+  line-height:50px;
+}
+.h40{
+  height: 40px;
+  line-height:40px;
+}
+.h30{
+  height: 30px;
+  line-height: 30px;
+}
+.h25{
+  height: 25px;
+  line-height: 25px;
+}
+.h20{
+  height: 20px;
+  line-height: 20px;
+}
+.h15{
+  height: 15px;
+  line-height: 15px;
+}
+.h10{
+  height: 10px;
+  line-height: 10px;
+}
+.w10{
+  width: 10px;
+}
+.w20{
+  width: 20px;
+}
+.w30{
+  width: 30px;
+}
+.w40{
+  width: 40px;
+}
+.w50{
+  width: 50px;
+}
+.w60{
+  width: 60px;
+}
+.w70{
+  width: 70px;
+}
+.w80{
+  width: 80px;
+}
+.w90{
+  width: 90px;
+}
+.w100{
+  width: 100px;
+}
+.w110{
+  width: 110px;
+}
+.w120{
+  width: 120px;
+}
+.w130{
+  width: 130px;
+}
+.w140{
+  width: 140px;
+}
+.w150{
+  width: 150px;
+}
+.w200{
+  width: 200px;
+}
+.w300{
+  width: 300px;
+}
+.w400{
+  width: 400px;
+}
+.y-br3{
+  border-radius: 3px;
+}
+.y-br5{
+  border-radius: 5px;
+}
+.y-br10{
+  border-radius: 10px;
+}
+.y-br20{
+  border-radius: 20px;
+}
+.y-br30{
+  border-radius: 30px;
+}
+.y-ptb3{
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.y-dyi{
+  display: inline-block;
+}
+.y-va{
+  vertical-align:middle;
+}
+.font2{
+  font-family: sans-serif, Arial;
+}
+.font3{
+  font-family: sans-serif, Arial;
+}
+.font4{
+  font-family: sans-serif, Arial;
+}
+@font-face {
+  font-family: 'AlibabaPuHuiTi55'; /* 自定义  的字体名称 */
+  src: url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/AlibabaPuHuiTi-3-55-Regular.otf') format('opentype'); /* 字体文件路径及格式 */
+  src: url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/AlibabaPuHuiTi-3-55-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/AlibabaPuHuiTi-3-55-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/AlibabaPuHuiTi-3-55-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'AlibabaPuHuiTi35'; /* 自定义的123字体名称 */
+  src: url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/AlibabaPuHuiTi-3-35-Thin.otf') format('opentype'); /* 字体文件路径及格式 */
+  src: url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/AlibabaPuHuiTi-3-35-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/AlibabaPuHuiTi-3-35-Thin.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/AlibabaPuHuiTi-3-35-Thin.woff') format('woff'), /* Pretty Modern Browsers */
+       url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/AlibabaPuHuiTi-3-35-Thin.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'DINNextLTPro-Bold'; /* 自定义的字体名称 */
+  src: url('https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/DINNextLTPro-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+a {
+  text-decoration: none; /* 移除下划线 */
+  color: inherit; /* 继承父元素的文本颜色 */
+  cursor: pointer; /* 保持链接的鼠标指针样式 */
+}
+
+/* 可以进一步重置不同状态的链接 */
+a:link,
+a:visited {
+  /* 对未访问和已访问的链接应用相同样式 */
+}
+
+a:hover,
+a:active {
+  /* 设置鼠标悬停和活动状态的样式 */
+}
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 9999;
+  opacity: 0.9;
+  display: none;
+}

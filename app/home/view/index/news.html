@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{$site.title},news</title>
+    <meta name="description" content="{$site.description},news">
+    <meta name="keywords" content="{$site.keywords}">
+    <script src="_home_/assets/i8n/i18next.min.js"></script>
+     <script src="_home_/assets/i8n/i18nextXHRBackend.min.js"></script>
+     <script src="_home_/assets/i8n/i18nextBrowserLanguageDetector.min.js"></script>
+    <link rel="stylesheet" href="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/index.css" />
+    <script src="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/vue.global.js"></script>
+    <link rel="stylesheet" href="_home_/assets/css/normalize.css">
+    <link rel="stylesheet" href="_home_/assets/css/common.css">    
+    <link rel="stylesheet" href="_home_/assets/css/header.css">
+    <link rel="stylesheet" href="_home_/assets/css/footer.css">
+    <link rel="stylesheet" href="_home_/assets/css/top.css">
+    <link rel="stylesheet" href="_home_/assets/css/news.css">
+    <script src="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/index.full.js"></script>
+</head>
+<body style="background: #F8F8F8;">
+    <div id="app" class="y-psr y-mga y-w100 y-h100">
+        {include file="index/header" /}
+        {include file="index/top" /}
+        <!-- <topbox></topbox> -->
+        <!-- banner开始 -->
+        <div class="y-psr box2">
+          <img alt="{$site.keywords}" src="_home_/assets/img/n1.jpg" class="y-w100 y-h100 y-va img-p">
+          <img alt="{$site.keywords}" src="_home_/assets/img/mobile/u8.jpg" class="y-w100 y-h100 y-va img-m">
+          <div class="y-ac y-mc6 y-psa y-mga box2-content font4">News Center</div>      
+        </div>
+        <!-- banner结束 -->
+        <div class="box3 y-psr y-mga">
+          
+          <div class="box3-header y-psr y-cp">
+            <a href="{:url('index/detail')}?id={$data.id}" target="_blank" title="{$site.keywords},{$data.title}">
+              <img src="{$data.img}" alt="" class="y-psa box3-img1 y-w100 img-p y-bs" >
+              <img src="{$data.img}" alt="" class="box3-img1 y-w100 img-m y-bs" >
+              <div class="y-psa box3-1 y-p y-bs y-mc6 img-p">
+                <div class="box3-d-t">{$data.title}</div>
+                <div class="box3-detail font3">
+                  <p>{$data.remark}</p>
+                </div>
+                <!-- <div class="y-psa box3-date font3">{$data.create_time}</div> -->
+              </div>
+              <div class="y-psr box3-1 y-bs y-mc6 img-m">
+                <div class="box3-1-2 y-h100 y-p y-bs">
+                  <div class="box3-d-t">{$data.title}</div>
+                  <div class="box3-detail font3">
+                    <div class="box3-detail1">
+                      <p>{$data.remark}</p>
+                    </div>
+                    <!-- <div class="box3-date font3">{$data.create_time}</div> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          
+          <div class="box3-content">
+            <el-row :gutter="20">
+              {volist name="list" id="vo"}
+              <el-col :lg="8" :md="24" :sm="24" :xs="24">
+                <div class="box3-content1 y-w100 y-cp y-bs y-bg6">
+                  <a href="{:url('index/detail')}?id={$vo.id}" target="_blank" title="{$site.keywords},{$data.title}" >
+                    <div class="y-w100 y-ofh box3-content1-img1">
+                      <img src="{$vo.img}" class="box3-content1-img y-w100" alt="">
+                    </div>
+                    <div class="y-p y-bs y-w100">
+                      <div class="box3-title y-e1">{$vo.title}</div>
+                      <div class="box3-text y-e1">{$vo.remark}</div>
+                      <div class="y-fx">
+                        <!-- <div class="y-fx1 y-al box3-detail-date y-e1">{$vo.create_time}</div> -->
+                        <div class="y-fx1 y-ar box3-test-detail">more<img src="_home_/assets/img/n10.png" class="y-mgl" alt=""></div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </el-col>
+              {/volist}
+            </el-row>
+            <div class="y-mga box3-pagination y-fx">
+              <!-- <el-pagination background layout="total, prev, pager, next" current-page.sync="1" total="{$list->total()}" :page-size="10" @current-change="page"></el-pagination> -->
+              <el-pagination background layout="prev, pager, next" :current-page="{$list->currentPage()}" :total="{$list->total()}" :page-size="15" @current-change="page"></el-pagination>
+            </div>
+          </div>
+        </div>
+        <!-- box10开始 -->
+        <div class="box10 y-w100 y-bg6 y-ac y-psr">
+          <img alt="{$site.keywords}" src="_home_/assets/img/10.jpg" class="y-mga box10-img y-va y-w100">
+          <div class="box10-1 y-mga y-psa">
+            <div class="box-font box10-title font4 y-ac y-mc6">GET IN TOUCH WITH POWERON SG</div>
+            <div class="box10-from y-mga y-psa">
+              <form id="myForm">
+                <div class="y-br10 y-bg6 y-psr" style="height:50px;">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/icon2.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                  <input type="text" name="title" style="left:45px;top:0px;height:45px;width:80%;" placeholder="Company name" class="y-psa">
+                </div>
+                <div class="h15"></div>
+                <div class="y-fx">
+                  <div class="y-fx1">
+                    <div class="y-br10 y-bg6 y-psr" style="height:50px;width:98%;">
+                      <img alt="{$site.keywords}" src="_home_/assets/img/icon4.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                      <input type="text" name="truename" style="left:45px;top:2px;height:43px;width:62%;" placeholder="Name" class="y-psa">
+                    </div>
+                  </div>
+                  <div class="y-fx1 y-ar">
+                    <div class="y-br10 y-bg6 y-dyi y-psr" style="height:50px;width:98%;">
+                      <img alt="{$site.keywords}" src="_home_/assets/img/icon3.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                      <input type="text" name="mobile" style="left:45px;top:2px;height:43px;width:62%;" placeholder="Tel" class="y-psa">
+                    </div>
+                  </div>
+                </div>
+                <div class="h15"></div>
+                <div class="y-br10 y-bg6 y-psr" style="height:50px;">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/icon1.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                  <input type="text" name="city" style="left:45px;top:0px;height:45px;width:80%;" placeholder="Application Region" class="y-psa">             
+                </div>
+                <div class="h15"></div>
+                <div class="y-br10 y-bg6 y-psr" style="height:100px;">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/icon5.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                  <textarea type="textarea" name="remark" style="left:45px;top:15px;height:80px;width:80%;" placeholder="Remarks" maxlength="100" class="y-psa textarea"></textarea>
+                </div>
+              </form>
+              <div class="h15"></div>
+              <div class="y-br30 y-bg3 y-mc6 h50 y-mga y-cp submit" onclick="feedback()">Submit</div>
+            </div>
+          </div>
+        </div>
+        <!-- box10结束 -->
+        {include file="index/footer" /}
+      </div>
+      <script>
+        i18next
+          .use(i18nextXHRBackend)
+          .use(i18nextBrowserLanguageDetector)
+          .init({
+            // backend: {
+            //   loadPath: '/locales/{{lng}}/{{ns}}.json'
+            // },
+            detection: {
+              order: ['cookie', 'localStorage', 'navigator'],
+              lookupCookie: 'i18next',
+              caches: ['cookie']
+            },
+            fallbackLng: 'en',
+            // lng: 'auto', // 自动检测语言
+            resources: {
+              en: { translation: {
+                home: "Home",
+                instruction: "Instruction",
+                cooperation: "Cooperation",
+                news: "News",
+                about: "AboutUs"
+              } }, // 空对象用于动态加载
+              zh: { translation: {
+                home: "Home",
+                instruction: "Instruction",
+                cooperation: "Cooperation",
+                news: "News",
+                about: "AboutUs"
+              } } // 空对象用于动态加载
+            }
+          });
+      </script>
+      <script src="_home_/assets/js/footer.js"></script>
+      <!-- <script src="_home_/assets/js/top.js"></script> -->
+      <script type="text/javascript">
+        const App = {
+          components: {
+            // Headerbox, Footerbox, Topbox
+          },
+          methods: {
+            gopage(name) {
+              window.location.href = `_home_/${name}.html`
+              console.log(`_home_/detail.html`)
+            },
+            page(e) {
+              console.log(e)
+              window.location.href = "{:url('index/news')}?page="+e
+            }
+          }
+        }
+        const app = Vue.createApp(App);
+        app.use(ElementPlus);
+        app.mount("#app");
+      </script>
+      <script src="_plugs_/area/jquery.min.js"></script>
+      <script src="_home_/assets/js/header.js"></script>
+      <script>
+        function showMessage(message, duration) {
+     // 创建一个弹窗元素
+     var dialog = $('<div class="dialog"></div>');
+     
+     // 添加消息内容
+     dialog.html('<p>' + message + '</p>');
+     
+     // 设置弹窗样式
+     dialog.css({
+       'position': 'fixed',
+       'top': '50%',
+       'left': '50%',
+       'transform': 'translate(-50%, -50%)',
+       'background': '#e9e9eb',
+       'padding': '20px',
+       'border-radius': '5px',
+       'color': '#F56C6C',
+       'z-index': '9999',
+       'opacity': 0.9,
+       'display': 'none'
+     });
+     
+     // 添加到页面
+     $('body').append(dialog);
+     
+     // 显示弹窗
+     dialog.fadeIn();
+     if (duration) {
+    setTimeout(function() {
+      dialog.fadeOut();
+    }, duration * 1000); // 将毫秒转换为秒
+  }
+     // 点击任何地方关闭弹窗
+    //  $(document).on('click', function(e) {
+    //    if (!$(e.target).is('.dialog')) {
+    //      dialog.fadeOut();
+    //    }
+    //  });
+   }
+        function feedback(){
+          let data = {
+            title : '' ,
+            truename : '' ,
+            mobile : '' ,
+            city : '' ,
+            remark : ''
+
+          }
+          const form = document.getElementById('myForm');
+          const formData = new FormData(form);
+          data.truename = formData.get('truename');
+          data.title = formData.get('title');
+          data.city = formData.get('city');
+          data.mobile = formData.get('mobile');
+          data.remark = formData.get('remark');
+          console.log(data)
+          if (!data.title) {
+            showMessage('Please fill in the Company name！', 3);
+            return
+          }
+          if (!data.truename) {
+            showMessage('Please fill in the Name！', 3);
+            return
+          }
+          if (!data.mobile) {
+            showMessage('Please fill in the Tel！', 3);
+            return
+          }
+          if (!data.city) {
+            showMessage('Please fill in the Application Region！', 3);
+            return
+          }
+          if (!data.remark) {
+            showMessage('Please fill in the Remarks！', 3);
+            return
+          }
+          let url = "{:url('index/feedback')}"
+
+          $.post(url,data,function(e){
+
+
+            console.log(e)
+            if(e.status == 1){
+              showMessage('Submitted successfully！', 3);
+              // 选择表单内所有需要清空的元素
+              var formElements = $('form').find('input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], textarea, select');
+
+              // 遍历并清空每个元素的值
+              formElements.each(function() {
+                $(this).val('');
+              });
+              // alert('提交成功')
+            }else{
+              showMessage('Submission failed！', 3);
+              // alert('提交失败')
+            }
+          },'json')
+        }
+      </script>
+</body>
+</html>

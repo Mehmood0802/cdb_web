@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{$site.title},contact us</title>
+    <meta name="description" content="{$site.description},contact us">
+    <meta name="keywords" content="{$site.keywords},contact us">
+    <script src="_home_/assets/i8n/i18next.min.js"></script>
+     <script src="_home_/assets/i8n/i18nextXHRBackend.min.js"></script>
+     <script src="_home_/assets/i8n/i18nextBrowserLanguageDetector.min.js"></script>
+    <link rel="stylesheet" href="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/index.css" />
+    <script src="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/vue.global.js"></script>
+    <link rel="stylesheet" href="_home_/assets/css/normalize.css">
+    <link rel="stylesheet" href="_home_/assets/css/common.css">    
+    <link rel="stylesheet" href="_home_/assets/css/header.css">
+    <link rel="stylesheet" href="_home_/assets/css/footer.css">
+    <link rel="stylesheet" href="_home_/assets/css/top.css">
+    <link rel="stylesheet" href="_home_/assets/css/cooperation.css">
+    <script src="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/index.full.js"></script>
+</head>
+<body>
+    <div id="app" class="y-psr y-mga y-w100 y-h100">
+        {include file="index/header" /}
+        {include file="index/top" /}
+        <!-- <topbox></topbox> -->
+        <!-- banner开始 -->
+        <div class="y-psr box2 y-z1">
+          <img alt="{$site.keywords}" src="_home_/assets/img/co3.png" class="y-w100 y-h100 y-psa img-p">
+          <img alt="{$site.keywords}" src="_home_/assets/img/mobile/u9.jpg" class="y-w100 y-psa img-m">
+          <div class="box-font box10-title y-ac y-mc8 y-z3 y-psr">Becoming a Partner at PowerOn SG</div>
+          <div class="y-ac y-mga box2-content y-z3 y-psr">
+            <div class="y-ac y-fx y-mc7">
+              <div class="y-fx1">
+                <div class="font4 box10-c1">1000+</div>
+                <div class="box10-c2">Partners</div>
+              </div>
+              <div class="y-fx1">
+                <div class="font4 box10-c1">150000+</div>
+                <div class="box10-c2">Registered Users</div>
+              </div>
+              <div class="y-fx1">
+                <div class="font4 box10-c1">30+</div>
+                <div class="box10-c2">Global Cities</div>
+              </div>
+            </div>
+            <div class="h30"></div>
+            <div class="box10 y-w100 y-bg6 y-ac y-psr">
+              <div class="box10-1 y-mga y-psa y-w100 y-h100">
+                <div class="box10-from y-mga y-psa">
+                  <form id="myForm">
+                    <div class="y-br10 y-bg6 y-psr y-b y-bs" style="height:50px;">
+                      <img alt="{$site.keywords}" src="_home_/assets/img/icon2.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                      <input name="title" type="text" style="left:45px;top:0px;height:45px;width:80%;" placeholder="Company name" class="y-psa">
+                    </div>
+                    <div class="h15"></div>
+                    <div class="y-fx">
+                      <div class="y-fx1 y-al">
+                        <div class="y-br10 y-bg6 y-dyi y-psr y-b y-bs" style="height:50px;width:98%;">
+                          <img alt="{$site.keywords}" src="_home_/assets/img/icon4.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                          <input name="truename" type="text" style="left:45px;top:0px;height:45px;width:60%;" placeholder="Name" class="y-psa">
+                        </div>
+                      </div>
+                      <div class="y-fx1 y-ar">
+                        <div class="y-br10 y-bg6 y-dyi y-psr y-b y-bs" style="height:50px;width:98%;">
+                          <img alt="{$site.keywords}" src="_home_/assets/img/icon3.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                          <input name="mobile" type="text" style="left:45px;top:0px;height:45px;width:60%;" placeholder="Tel" class="y-psa">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="h15"></div>
+                    <div class="y-br10 y-bg6 y-psr y-b y-bs" style="height:50px;">
+                      <img alt="{$site.keywords}" src="_home_/assets/img/icon1.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                      <input type="text" name="city" style="left:45px;top:0px;height:45px;width:80%;" placeholder="Application Region" class="y-psa">             
+                    </div>
+                    <div class="h15"></div>
+                    <div class="y-br10 y-bg6 y-psr y-b y-bs" style="height:100px;">
+                      <img alt="{$site.keywords}" src="_home_/assets/img/icon5.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                      <textarea type="textarea" name="remark" style="left:45px;top:15px;height:80px;width:80%;" placeholder="Remarks" maxlength="100" class="y-psa textarea"></textarea>
+                    </div>
+                  </form>
+                  <div class="h25"></div>
+                  <div class="y-br30 y-bg1 y-mc6 h50 y-mga y-cp box2-btn" onclick="feedback()">Submit</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- banner结束 -->
+        <!-- box4开始 -->
+        <div class="box4 y-w100 y-bg6">
+          <div class="box4-1 y-mga y-bs">
+            <div class="h50 box4-title font4 y-fw y-mc7">Comprehensive Security</div>
+            <el-row>
+              <el-col :lg="8" :md="24">
+                <div class="box4-1-1 y-psr box4-1-2">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/co9.png" class="box4-img">
+                  <div class="box4-content y-psa y-al">
+                    <div class="box4-font3 y-mc8 font4">Top-Tier Supply Chain</div>
+                    <div class="box4-font2 y-mc6">Supported by Suzhou, China, leveraging the country's premier supply chain network.</div>
+                  </div>
+                </div>
+              </el-col>
+              <el-col :lg="8" :md="24">
+                <div class="box4-1-1 y-ac y-psr box4-1-3">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/co10.png" class="box4-img">
+                  <div class="box4-content2 y-psa y-al">
+                    <div class="box4-font3 y-mc8 font4">Rapid Profitability</div>
+                    <div class="box4-font2 y-mc6">Immediate investment leads to visible and rapid income growth.</div>
+                  </div>
+                </div>
+              </el-col>
+              <el-col :lg="8" :md="24">
+                <div class="box4-1-1 y-ar y-psr box4-1-4">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/co1.png" class="box4-img">
+                  <div class="box4-content3 y-psa y-al">
+                    <div class="box4-font3 y-mc8 font4">Safe and Worry-Free</div>
+                    <div class="box4-font2 y-mc6">Reliable equipment with guaranteed quality. Our professional operations and maintenance team offers seamless, one-stop services.</div>
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        <!-- box4结束 -->
+        <!-- box2开始 -->
+        <div class="y-bg8 height2 bannerbox img-p">
+          <el-carousel :interval="50000" class="height2" arrow="always">
+            <el-carousel-item class="height2">
+              <div class="y-ac y-h100 y-psr y-bs " style="padding-top:50px;">
+                <div class="box4-1 y-mga height3 y-bs">
+                  <el-row>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-fx1 banner2">
+                        <div class="y-al y-mc5">Product Name：</div>
+                        <div class="y-al y-mc8 font2 y-fw box4-1-title">48-Port Screen Advertising Machine</div>
+                        <div class="y-al y-mc7" style="line-height:20px;">Suitable for high foot traffic areas such as shopping malls</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Size：</div>
+                        <div class="y-al y-mc7 h30">（L）600mm*（W）650mm*（H）1895mm</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Screen：</div>
+                        <div class="y-al y-mc7" style="line-height:20px;">43 inch LCD screen/playable video (1920 * 1080px)</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Slot：</div>
+                        <div class="y-al y-mc7 h30">48</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Power：</div>
+                        <div class="y-al y-mc7 h30">72W standby, 320W full load</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Maximum Daily Power Consumption：</div>
+                        <div class="y-al y-mc7 h30">2.8KW</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Weight：</div>
+                        <div class="y-al y-mc7 h30">77KG (including adapter)</div>
+                      </div>
+                    </el-col>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-ar bannerbox-img1 y-h100">
+                        <img alt="{$site.keywords}" src="_home_/assets/img/co6.png" class="y-dyi">
+                      </div>
+                    </el-col>
+                  </el-row>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item class="height2">
+              <div class="y-ac y-h100 y-psr y-bs" style="padding-top:50px;">
+                <div class="box4-1 y-mga height3 y-bs">
+                  <el-row>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-fx1 banner2">
+                        <div class="y-al y-mc5">Product Name：</div>
+                        <div class="y-al y-mc8 font2 y-fw box4-1-title">Mobile Power Supply</div>
+                        <div class="y-al y-mc7" style="line-height:20px;">Lightweight and convenient. Charge anywhere and anytime</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Size：</div>
+                        <div class="y-al y-mc7 h30">（L）138mm*（W）68.3mm*（H）15.2mm</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Battery capacity:</div>
+                        <div class="y-al y-mc7 h30">3.7V/5000mAh(18.5Wh)</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Charging cable:</div>
+                        <div class="y-al y-mc7 h30">Supports Android, Apple and Type-C</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">INPUT：</div>
+                        <div class="y-al y-mc7 h30">5V/2A</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">OUTPUT：</div>
+                        <div class="y-al y-mc7 h30">5V/2A</div>
+                        <div class="h30"></div>
+                        <!-- <div class="y-al y-mc5">Loop:</div>
+                        <div class="y-al y-mc7 h30">500second</div> -->
+                      </div>
+                    </el-col>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-ar bannerbox-img2 y-h100">
+                        <img alt="{$site.keywords}" src="_home_/assets/img/co4.png" class="">
+                      </div>
+                    </el-col>
+                  </el-row>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item class="height2">
+              <div class="y-ac y-h100 y-psr y-bs" style="padding-top:50px;">
+                <div class="box4-1 y-mga height3 y-bs">
+                  <el-row>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-fx1 banner2">
+                        <div class="y-al y-mc5">Product Name：</div>
+                        <div class="y-al y-mc8 font2 y-fw box4-1-title">8-Port Screen Advertising Machine</div>
+                        <div class="y-al y-mc7" style="line-height:20px;">Compact design, perfect for small and medium-sized locations such as convenience stores</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Size：</div>
+                        <div class="y-al y-mc7 h30">（L）360mm*（W）190mm*（H）180mm</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Screen：</div>
+                        <div class="y-al y-mc7" style="line-height:20px;">10.1-inch LCD screen/playable video (1280 * 800px)</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Slot：</div>
+                        <div class="y-al y-mc7 h30">8</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Power：</div>
+                        <div class="y-al y-mc7 h30">3W standby, 75W full load</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Maximum Daily Power Consumption：</div>
+                        <div class="y-al y-mc7 h30">0.4KW</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Weight：</div>
+                        <div class="y-al y-mc7 h30">4.1KG(Including adapter)</div>
+                      </div>
+                    </el-col>
+                    <el-col :lg="12" :md="24">
+                      <div class="bannerbox-img3 y-h100">
+                        <img alt="{$site.keywords}" src="_home_/assets/img/co8.png" class="">
+                      </div>
+                    </el-col>
+                  </el-row>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item  class="height2">
+              <div class="y-ac y-h100 y-psr y-bs" style="padding-top:50px;">
+                <div class="box4-1 y-mga height3 y-bs">
+                  <el-row>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-fx1 banner2">
+                        <div class="y-al y-mc5">Product Name：</div>
+                        <div class="y-al y-mc8 font2 y-fw box4-1-title">12-Port Screen Advertising Machine</div>
+                        <div class="y-al y-mc7" style="line-height:20px;">Provides emergency charging with a flexible design, suitable for any scenario</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Size：</div>
+                        <div class="y-al y-mc7 h30">（L）260mm*（W）235mm*（H）260mm</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Screen：</div>
+                        <div class="y-al y-mc7"  style="line-height:20px;">10.1-inch LCD screen/playable video (1280 * 800px)</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Slot：</div>
+                        <div class="y-al y-mc7 h30">12</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Power：</div>
+                        <div class="y-al y-mc7 h30">3W standby, 75W full load</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Maximum Daily Power Consumption：</div>
+                        <div class="y-al y-mc7 h30">0.5KW</div>
+                        <div class="h30"></div>
+                        <div class="y-al y-mc5">Weight：</div>
+                        <div class="y-al y-mc7 h30">3.9KG(Including adapter)</div>
+                      </div>
+                    </el-col>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-ar bannerbox-img4 y-h100">
+                        <img alt="{$site.keywords}" src="_home_/assets/img/co7.png" class="">
+                      </div>
+                    </el-col>
+                  </el-row>
+                </div>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+        <div class="y-bg8 height2 bannerbox img-m">
+          <el-carousel :interval="50000" class="height2" arrow="always">
+            <el-carousel-item class="height2">
+              <div class="y-ac y-h100 y-psr y-bs " style="padding-top:50px;">
+                <div class="box4-1 y-mga height3 y-bs">
+                  <el-row>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-ar bannerbox-img1 y-h100">
+                        <img alt="{$site.keywords}" src="_home_/assets/img/co6.png" class="y-dyi">
+                      </div>
+                    </el-col>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-fx1 banner2">
+                        <div class="y-al y-mc5">Product Name：</div>
+                        <div class="y-al y-mc8 font2 y-fw box4-1-title">48-Port Screen Advertising Machine</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">Suitable for high foot traffic areas such as shopping malls</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Size：</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">（L）600mm*（W）650mm*（H）1895mm</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Screen：</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">43 inch LCD screen/playable video (1920 * 1080px)</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Slot：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">48</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Power：</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">72W standby, 320W full load</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Maximum Daily Power Consumption：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">2.8KW</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Weight：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">77KG (including adapter)</div>
+                      </div>
+                    </el-col>
+                  </el-row>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item class="height2">
+              <div class="y-ac y-h100 y-psr y-bs" style="padding-top:50px;">
+                <div class="box4-1 y-mga height3 y-bs">
+                  <el-row>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-ar bannerbox-img2 y-h100">
+                        <img alt="{$site.keywords}" src="_home_/assets/img/co4.png" class="">
+                      </div>
+                    </el-col>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-fx1 banner2">
+                        <div class="y-al y-mc5">Product Name：</div>
+                        <div class="y-al y-mc8 font2 y-fw box4-1-title">Mobile Power Supply</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">Lightweight and convenient. Charge anywhere and anytime</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Size：</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">（L）138mm*（W）68.3mm*（H）15.2mm</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Battery capacity:</div>
+                        <div class="y-al y-mc7 h20 y-ft14">3.7V/5000mAh(18.5Wh)</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Charging cable:</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">Supports Android, Apple and Type-C</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">INPUT：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">5V/2A</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">OUTPUT：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">5V/2A</div>
+                        <div class="h10"></div>
+                        <!-- <div class="y-al y-mc5">Loop:</div>
+                        <div class="y-al y-mc7 h30">500second</div> -->
+                      </div>
+                    </el-col>
+                  </el-row>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item class="height2">
+              <div class="y-ac y-h100 y-psr y-bs" style="padding-top:50px;">
+                <div class="box4-1 y-mga height3 y-bs">
+                  <el-row>
+                    <el-col :lg="12" :md="24">
+                      <div class="bannerbox-img3 y-h100">
+                        <img alt="{$site.keywords}" src="_home_/assets/img/co8.png" class="">
+                      </div>
+                    </el-col>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-fx1 banner2">
+                        <div class="y-al y-mc5">Product Name：</div>
+                        <div class="y-al y-mc8 font2 y-fw box4-1-title">8-Port Screen Advertising Machine</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">Compact design, perfect for small and medium-sized locations such as convenience stores</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Size：</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">（L）360mm*（W）190mm*（H）180mm</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Screen：</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">10.1-inch LCD screen/playable video (1280 * 800px)</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Slot：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">8</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Power：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">3W standby, 75W full load</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Maximum Daily Power Consumption：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">0.4KW</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Weight：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">4.1KG(Including adapter)</div>
+                      </div>
+                    </el-col>
+                  </el-row>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item  class="height2">
+              <div class="y-ac y-h100 y-psr y-bs" style="padding-top:50px;">
+                <div class="box4-1 y-mga height3 y-bs">
+                  <el-row>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-ar bannerbox-img4 y-h100">
+                        <img alt="{$site.keywords}" src="_home_/assets/img/co7.png" class="">
+                      </div>
+                    </el-col>
+                    <el-col :lg="12" :md="24">
+                      <div class="y-fx1 banner2">
+                        <div class="y-al y-mc5">Product Name：</div>
+                        <div class="y-al y-mc8 font2 y-fw box4-1-title">12-Port Screen Advertising Machine</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">Provides emergency charging with a flexible design, suitable for any scenario</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Size：</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">（L）260mm*（W）235mm*（H）260mm</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Screen：</div>
+                        <div class="y-al y-mc7 y-ft14" style="line-height:20px;">10.1-inch LCD screen/playable video (1280 * 800px)</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Slot：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">12</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Power：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">3W standby, 75W full load</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Maximum Daily Power Consumption：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">0.5KW</div>
+                        <div class="h10"></div>
+                        <div class="y-al y-mc5">Weight：</div>
+                        <div class="y-al y-mc7 h20 y-ft14">3.9KG(Including adapter)</div>
+                      </div>
+                    </el-col>
+                  </el-row>
+                </div>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+        <!-- box2结束 -->
+        <!-- box3开始 -->
+        <div class="box8 y-w100 y-bg6 y-ac">
+          <div class="box8-1 y-mga">
+            <div class="box-font box-font3 box8-font3 font4 y-mc7">Collaboration Process</div>
+            <div class="box4-1 y-mga y-ac y-psr y-bs">
+              <img alt="{$site.keywords}" src="_home_/assets/img/co2.png" class="y-mga y-w100 img-p">
+              <img alt="{$site.keywords}" src="_home_/assets/img/mobile/u10.png" class="y-mga y-w100 img-m">
+              <div class=" img-p y-psa y-al box8-content1 y-mc6">Submit Information</div>
+              <div class=" img-p y-psa y-al box8-content2 y-mc5">Provide your company information and express your cooperation intent</div>
+              <div class=" img-p y-psa y-al box8-content3 y-mc6">Communication with Investment Manager</div>
+              <div class=" img-p y-psa y-al box8-content4 y-mc5">Engage in detailed discussions with our investment manager to finalize the cooperation model, designated area, and equipment quantity</div>
+              <div class=" img-p y-psa y-al box8-content5 y-mc6">Sign Contracts</div>
+              <div class=" img-p y-psa y-al box8-content6 y-mc5">Sign and submit the necessary documents to officially become a PowerOn partner.</div>
+              <div class=" img-p y-psa y-al box8-content7 y-mc6">Generate Revenue</div>
+              <div class=" img-p y-psa y-al box8-content8 y-mc5">PowerOn will set up exclusive backend operation accounts for each partner, allowing you to monitor and manage your revenue</div>
+              <div class=" img-p y-psa y-al box8-content9 y-mc6">Training and Equipment Installation</div>
+              <div class=" img-p y-psa y-al box8-content10 y-mc5">The channel manager will coordinate with you to schedule equipment installation after finalizing the cooperation agreement</div>
+              <div class=" img-p y-psa y-al box8-content11 y-mc6">Activate Backend</div>
+              <div class=" img-p y-psa y-al box8-content12 y-mc5">Begin generating revenue through user rentals! Track and record earnings.</div>
+            </div>
+            <div style="clear: both;"></div>
+          </div>
+          <div style="clear: both;"></div>
+        </div>  
+        <!-- box3结束 -->
+        <!-- box4开始 -->
+        <div class="box5 y-w100 y-bg8">
+          <div class="box4-1 y-mga y-bs">
+            <div class="h50 box4-title font4 y-fw y-mc7">Frequently Asked Questions</div>
+            <div class="qa-box" style="margin-bottom:50px;">
+              <div class="y-psr y-al y-fx">
+                <div class="box4-font4 y-mc7 y-fx8">1.How to rent a power bank?</div>
+                <div class="y-fx1 y-ar">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/bottom.png" class="arr y-dyi">
+                </div>
+              </div>
+              <div class="qa-content y-mc9"><p>There is a QR Code on each machine. You can scan the QR Code by clicking "Scan QR" in the app. After that, you need to choose the payment method to recharge the deposit. Once you have made the deposit successfully, the power bank will pop out and you will be able to use it.</p></div>
+            </div>
+            <div class="qa-box" style="margin-bottom:50px;">
+              <div class="y-psr y-al y-fx">
+                <div class="box4-font4 y-mc7 y-fx8">2.How to return the power bank?</div>
+                <div class="y-fx1 y-ar">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/bottom.png" class="arr y-dyi">
+                </div>
+              </div>
+              <div class="qa-content y-mc9"><p>Tuck the cables into the channel securely and insert the side of the power bank with metal chips into an empty socket till it reaches the bottom and stabilized.</p></div>
+            </div>
+            <div class="qa-box" style="margin-bottom:50px;">
+              <div class="y-psr y-al y-fx">
+                <div class="box4-font4 y-mc7 y-fx8">3.What if l fails to make the payment?</div>
+                <div class="y-fx1 y-ar">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/bottom.png" class="arr y-dyi">
+                </div>
+              </div>
+              <div class="qa-content y-mc9"><p>Please check your balance of selected payment method or try other payment methods. If it fails again, please contact us (+65 82073520(Whatsapp) / contact@poweron.com.sg) to report the problem.</p></div>
+            </div>
+            <div class="qa-box" style="margin-bottom:50px;">
+              <div class="y-psr y-al y-fx">
+                <div class="box4-font4 y-mc7 y-fx8">4.What if it fails to rent after a successful payment?</div>
+                <div class="y-fx1 y-ar">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/bottom.png" class="arr y-dyi">
+                </div>
+              </div>
+              <div class="qa-content y-mc9"><p>Your order will be cancelled automatically, no charges will be made. Please try to rent again or contact us (+65 82073520(Whatsapp) / contact@poweron.com.sg) to report the problem.</p></div>
+            </div>
+            <div class="qa-box" style="margin-bottom:50px;">
+              <div class="y-psr y-al y-fx">
+                <div class="box4-font4 y-mc7 y-fx8">5.What if it shows as failed to return when I already returned the power bank into machine?</div>
+                <div class="y-fx1 y-ar">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/bottom.png" class="arr y-dyi">
+                </div>
+              </div>
+              <div class="qa-content y-mc9"><p>In this case, please contact us (+65 82073520(Whatsapp) / contact@poweron.com.sg) to report the problem. Our technicians will solve the problem as soon as possible.</p></div>
+            </div>
+            <!-- <div class="y-psr y-al h50 y-fx" style="margin-bottom:50px;">
+              <div class="y-mc7 y-fx7">
+                <input type="text" style="height:46px;width:97%;border-radius: 5px;" placeholder="Please enter your question..." class="y-b">
+              </div>
+              <div class="y-fx1 y-ac">
+                <div class="y-bg5 y-mc6 y-cp" style="background: #DCDCDC;border-radius: 5px;">Search</div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <!-- box4结束 -->
+        {include file="index/footer" /}
+      </div> 
+      <script>
+        i18next
+          .use(i18nextXHRBackend)
+          .use(i18nextBrowserLanguageDetector)
+          .init({
+            // backend: {
+            //   loadPath: '/locales/{{lng}}/{{ns}}.json'
+            // },
+            detection: {
+              order: ['cookie', 'localStorage', 'navigator'],
+              lookupCookie: 'i18next',
+              caches: ['cookie']
+            },
+            fallbackLng: 'en',
+            // lng: 'auto', // 自动检测语言
+            resources: {
+              en: { translation: {
+                home: "Home",
+                instruction: "Instruction",
+                cooperation: "Cooperation",
+                news: "News",
+                about: "AboutUs"
+              } }, // 空对象用于动态加载
+              zh: { translation: {
+                home: "Home",
+                instruction: "Instruction",
+                cooperation: "Cooperation",
+                news: "News",
+                about: "AboutUs"
+              } } // 空对象用于动态加载
+            }
+          });
+      </script>
+      <script src="_home_/assets/js/footer.js"></script>
+      <!-- <script src="_home_/assets/js/top.js"></script> -->
+      <script type="text/javascript">
+        const App = {
+          components: {
+            // Headerbox, Footerbox, Topbox
+          }
+        }
+        const app = Vue.createApp(App);
+        app.use(ElementPlus);
+        app.mount("#app");
+      </script>
+      <script src="_plugs_/area/jquery.min.js"></script>
+      <script src="_home_/assets/js/header.js"></script>
+      <script>
+           function showMessage(message, duration) {
+     // 创建一个弹窗元素
+     var dialog = $('<div class="dialog"></div>');
+     
+     // 添加消息内容
+     dialog.html('<p>' + message + '</p>');
+     
+     // 设置弹窗样式
+     dialog.css({
+       'position': 'fixed',
+       'top': '50%',
+       'left': '50%',
+       'transform': 'translate(-50%, -50%)',
+       'background': '#e9e9eb',
+       'padding': '20px',
+       'border-radius': '5px',
+       'color': '#F56C6C',
+       'z-index': '9999',
+       'opacity': 0.9,
+       'display': 'none'
+     });
+     
+     // 添加到页面
+     $('body').append(dialog);
+     
+     // 显示弹窗
+     dialog.fadeIn();
+     if (duration) {
+    setTimeout(function() {
+      dialog.fadeOut();
+    }, duration * 1000); // 将毫秒转换为秒
+  }
+     // 点击任何地方关闭弹窗
+    //  $(document).on('click', function(e) {
+    //    if (!$(e.target).is('.dialog')) {
+    //      dialog.fadeOut();
+    //    }
+    //  });
+   }
+        function feedback(){
+          let data = {
+            title : '' ,
+            truename : '' ,
+            mobile : '' ,
+            city : '' ,
+            remark : ''
+
+          }
+          const form = document.getElementById('myForm');
+          const formData = new FormData(form);
+          data.truename = formData.get('truename');
+          data.title = formData.get('title');
+          data.city = formData.get('city');
+          data.mobile = formData.get('mobile');
+          data.remark = formData.get('remark');
+          console.log(data)
+          if (!data.title) {
+            showMessage('Please fill in the Company name！', 3);
+            return
+          }
+          if (!data.truename) {
+            showMessage('Please fill in the Name！', 3);
+            return
+          }
+          if (!data.mobile) {
+            showMessage('Please fill in the Tel！', 3);
+            return
+          }
+          if (!data.city) {
+            showMessage('Please fill in the Application Region！', 3);
+            return
+          }
+          if (!data.remark) {
+            showMessage('Please fill in the Remarks！', 3);
+            return
+          }
+          let url = "{:url('index/feedback')}"
+
+          $.post(url,data,function(e){
+
+
+            console.log(e)
+            if(e.status == 1){
+              showMessage('Submitted successfully！', 3);
+              // 选择表单内所有需要清空的元素
+              var formElements = $('form').find('input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], textarea, select');
+
+              // 遍历并清空每个元素的值
+              formElements.each(function() {
+                $(this).val('');
+              });
+              // alert('提交成功')
+            }else{
+              showMessage('Submission failed！', 3);
+              // alert('提交失败')
+            }
+          },'json')
+        }
+      </script>
+      <script>
+        $(document).ready(function() {
+          let rotationState = [false, false, false, false, false]; // 初始状态为未旋转
+          $('.qa-box').click(function() {
+            // 当前li元素在同级li元素中的索引（从0开始）
+            var index = $(this).index();
+            $('.qa-content').eq(index-1).slideToggle()
+
+            // 添加CSS3的transform属性，设置为rotate(90deg)
+            if (!rotationState[index]) {
+              // 第一次点击，旋转180度
+              $('.arr').eq(index-1).css({
+                transform: 'rotate(180deg)',
+                '-webkit-transform': 'rotate(180deg)', // 对于旧版Webkit浏览器
+                '-moz-transform': 'rotate(180deg)',    // 对于Firefox旧版
+                '-ms-transform': 'rotate(180deg)',     // 对于IE9
+                '-o-transform': 'rotate(180deg)'       // 对于Opera旧版
+              });
+              rotationState[index] = true;
+            } else {
+              $('.arr').eq(index-1).css({
+                transform: 'rotate(0deg)',
+                '-webkit-transform': 'rotate(0deg)', // 对于旧版Webkit浏览器
+                '-moz-transform': 'rotate(0deg)',    // 对于Firefox旧版
+                '-ms-transform': 'rotate(0deg)',     // 对于IE9
+                '-o-transform': 'rotate(0deg)'       // 对于Opera旧版
+              });
+              // 第二次点击，还原
+              rotationState[index] = false;
+            }
+            // 输出索引
+            // console.log('你点击了第', index, '个列表项', $('.qa-content'));
+          });
+        });
+        </script>
+</body>
+</html>

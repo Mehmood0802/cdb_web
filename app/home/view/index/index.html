@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{$site.title}_home</title>
+    <meta name="description" content="{$site.description}">
+    <meta name="keywords" content="{$site.keywords}">
+    <script src="_home_/assets/i8n/i18next.min.js"></script>
+     <script src="_home_/assets/i8n/i18nextXHRBackend.min.js"></script>
+     <script src="_home_/assets/i8n/i18nextBrowserLanguageDetector.min.js"></script>
+    <link rel="stylesheet" href="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/index.css" />
+    <script src="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/vue.global.js"></script>
+    <link rel="stylesheet" href="_home_/assets/css/normalize.css">
+    <link rel="stylesheet" href="_home_/assets/css/common.css">
+    <link rel="stylesheet" href="_home_/assets/css/header.css">
+    <link rel="stylesheet" href="_home_/assets/css/footer.css">
+    <link rel="stylesheet" href="_home_/assets/css/home.css">
+    <link rel="stylesheet" href="_home_/assets/css/top.css">
+    <script src="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/index.full.js"></script>
+  
+</head>
+<body>
+    <div id="app" class="y-psr y-mga y-w100 y-h100">
+        {include file="index/header" /}
+        {include file="index/top" /}
+        <!-- <topbox></topbox> -->
+        <!-- banner开始 -->
+        <div class="banner-p">
+          <el-carousel :interval="5000" :style="`height:${height}px;`" arrow="always">
+            <el-carousel-item :style="`height:${height}px;`">
+              <img alt="{$site.keywords}" src="_home_/assets/img/banner.jpg" class="y-w100">
+            </el-carousel-item>
+            <el-carousel-item :style="`height:${height}px;`">
+              <img alt="{$site.keywords}" src="_home_/assets/img/banner2.jpg" class="y-w100">
+            </el-carousel-item>
+            <el-carousel-item :style="`height:${height}px;`">
+              <img alt="{$site.keywords}" src="_home_/assets/img/banner3.jpg" class="y-w100">
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+        <div class="banner-m">
+          <el-carousel :interval="5000" :style="`height:${height2}px;`" arrow="always">
+            <el-carousel-item :style="`height:${height2}px;`">
+              <img alt="{$site.keywords}" src="_home_/assets/img/mobile/b1.jpg" class="y-w100">
+            </el-carousel-item>
+            <el-carousel-item :style="`height:${height2}px;`">
+              <img alt="{$site.keywords}" src="_home_/assets/img/mobile/b2.jpg" class="y-w100">
+            </el-carousel-item>
+          </el-carousel>
+          <div class="h30"></div>
+        </div>
+        <!-- banner结束 -->
+        <!-- box1开始 -->
+        <div class="box1 y-w100 y-bg6 y-ac">
+          <div class="box1-1 y-mga">
+            <el-row>
+              <el-col :lg="12" :md="24">
+                <div class="box1-1-1 y-al y-psr">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/p1.png" class="y-psa y-mga box1-img">
+                </div>
+              </el-col>
+              <el-col :lg="12" :md="24">
+                <div class="box1-1-2 y-psr y-ac">
+                  <div class="y-psa y-mga y-psr box1-content">
+                    <div class="box-font font4 box1-font y-mc7">Portable Shared Power Bank</div>
+                    <div class="box-font2 box1-font2 fontsize y-mc5 box1-font5">Android, Apple, and Type-C interfaces are compatible with 99% of smart devices on the market for charging.</div>
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        <!-- box1结束 -->
+        <!-- box2开始 -->
+        <div class="box2 y-w100 y-bg8 y-ac">
+          <div class="box1-1 y-mga y-psr">
+            <el-row>
+              <el-col :lg="12" :md="24">
+                <div class="box2-1-2 y-psr y-ac">
+                  <div class="y-psa y-mga y-psr box2-content">
+                    <div class="box-font font4 box2-font y-mc7">Starting From "Chip"</div>
+                    <div class="box-font2 y-ft16 fontsize y-mc5 box2-font5">Reliable core with ATL/GF high-density polymer batteries ensures greater reliability, safety, and durability.</div>
+                  </div>
+                </div>
+              </el-col>
+              <el-col :lg="12" :md="24">
+                <div class="box2-1-1 y-al y-psr">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/p2.png" class="y-psa y-mga box2-img">
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        <!-- box2结束 -->
+        <!-- box3开始 -->
+        <div class="box3 y-w100 y-bg6 y-ac">
+          <div class="box3-1 y-mga">
+            <el-row>
+              <el-col :lg="12" :md="24">
+                <div class="box3-1-1 y-al y-psr">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/p3.png" class="y-psa y-mga box3-img">
+                </div>
+              </el-col>
+              <el-col :lg="12" :md="24">
+                <div class="box3-1-2 y-psr y-ac">
+                  <div class="y-psa y-mga y-psr box3-content">
+                    <div class="box-font font4 box3-font y-mc7">Super Fast Charging</div>
+                    <div class="box-font2 fontsize y-mc5 box3-font5">10W fast charging for quicker, more efficient power.</div>
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        <!-- box3结束 -->
+        <!-- box4开始 -->
+        <div class="box4 y-w100 y-bg8 y-ac">
+          <div class="box4-1 y-mga">
+            <div class="h50 y-ac box4-title font4 y-mc7">Integrated Safety</div>
+            <el-row>
+              <el-col :lg="8" :md="24">
+                <div class="box4-1-1 y-ac y-bs">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/i1.png" class="box4-img">
+                  <div class="y-ac box4-content">
+                    <div class="box4-font3 y-mc7">Material Safety</div>
+                    <div class="box4-font2 y-mc5">The body is made of PC+ABS V0 fire-resistant material</div>
+                  </div>
+                  <div style="clear: both;"></div>
+                </div>
+              </el-col>
+              <el-col :lg="8" :md="24">
+                <div class="box4-1-1 y-ac y-bs">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/i2.png" class="box4-img">
+                  <div class="y-ac box4-content">
+                    <div class="box4-font3 y-mc7">Charging Safety</div>
+                    <div class="box4-font2 y-mc5">Output Overvoltage/ Overcurrent/ High Temperature/ Over Charging/ Over Discharging/ Protection, Short-circuit Protection </div>
+                  </div>
+                  <div style="clear: both;"></div>
+                </div>
+              </el-col>
+              <el-col :lg="8" :md="24">
+                <div class="box4-1-1 y-ac y-bs">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/i3.png" class="box4-img">
+                  <div class="y-ac box4-content y-bs">
+                    <div class="box4-font3 y-mc7">Information Safety</div>
+                    <div class="box4-font2 y-mc5">Adopting high intensity encryption to ensure user information security</div>
+                    <div style="clear: both;"></div>
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        <!-- box4结束 -->
+        <!-- box5开始 -->
+        <div class="box5 y-w100 y-bg6 y-ac">
+          <div class="box3-1 y-mga">
+            <el-row>
+              <el-col :lg="12" :md="24">
+                <div class="box5-1-2 y-psr y-al">
+                  <div class="y-psa y-mga y-psr box5-content">
+                    <div class="box-font font4 y-mc7">Global Quality Certification</div>
+                    <div class="box5-font2 fontsize y-mc5">International —— FCC certification</div>
+                    <div class="box5-font2 fontsize y-mc5">EU —— CE certification, ROHS environmental certification</div>
+                    <div class="box5-font2 fontsize y-mc5">United States —— UL certification</div>
+                    <div class="box5-font2 fontsize y-mc5">China —— CQC certification, CCC certification</div>
+                  </div>
+                </div>
+              </el-col>
+              <el-col :lg="12" :md="24">
+                <div class="box5-1-1 y-al y-psr">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/5.png" class="y-psa y-mga box5-img y-w100">
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        <!-- box5结束 -->
+        <!-- box6开始 -->
+        <div class="box6 y-w100 y-bg8 y-ac">
+          <div class="box3-1 y-mga">
+            <el-row>
+              <el-col :lg="12" :md="24">
+                <div class="box6-1-1 y-al y-psr">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/6.png" class="y-psa y-mga box6-img">
+                </div>
+              </el-col>
+              <el-col :lg="12" :md="24">
+                <div class="box6-1-2 y-psr y-ac">
+                  <div class="y-psa y-mga y-psr box6-content">
+                    <div class="box-font font4 y-mc7">Intelligent Backend</div>
+                    <div class="box-font2 fontsize y-mc5 box6-font5">A powerful data analysis system that analyses equipment operation from multiple dimensions to improve efficiency, refine optimization points and effectively increase revenue.</div>
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        <!-- box6结束 -->
+        <!-- box7开始 -->
+        <div class="box7 y-w100 y-bg6 y-ac">
+          <div class="box3-1 y-mga">
+            <div class="box7-1-1 y-ac y-psr">
+              <img alt="{$site.keywords}" src="_home_/assets/img/7.png" class="y-psa y-mga box7-img">
+              <img alt="{$site.keywords}" src="_home_/assets/img/mobile/m1.png" class="y-mga box7-img2">
+              <img alt="{$site.keywords}" src="_home_/assets/img/mobile/m2.png" class="y-mga box7-img3">
+              <div class="y-psa y-mga y-psr box7-content">
+                <div class="box-font font4 y-mc7">Our Product</div>
+                <div class="box-font2 fontsize y-mc5">Devices for various scenarios, scan and go</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- box7结束 -->
+        <!-- box8开始 -->
+        <div class="box8 y-w100 y-bg8 y-ac">
+          <div class="box8-1 y-mga">
+            <div class="font4 box8-font5">
+              <div class="box-font y-fw y-ac box-font3 y-mc7">Our Clients</div>
+              <div class="y-ft20 y-mc5">Over <span class="y-mc8">1000</span> collaborative partnerships</div>
+            </div>
+            <div class="box8-1-1 y-ac y-psr">
+              <img alt="{$site.keywords}" src="_home_/assets/img/logobg.png" class="y-mga y-w100 box8-img">
+              <img alt="{$site.keywords}" src="_home_/assets/img/mobile/m4.png" class="y-mga box8-img2">
+              <img alt="{$site.keywords}" src="_home_/assets/img/mobile/m6.png" class="y-mga box8-img3">
+            </div>
+          </div>
+        </div>
+        <!-- box8结束 -->
+        <!-- box9开始 -->
+        <div class="box8 y-w100 y-bg6 y-ac">
+          <div class="box8-1 y-mga">
+            <div class="box-font box-font3 font4 y-mc7" style="padding:40px 0 10px 0;">Application Scenarios</div>
+            <div class="y-bs y-ac fontsize y-mc5 box9-font4">Full scenario coverage, renting and returning as needed</div>
+            <div class="box8-1-1 y-ac y-psr box9-content">
+              <img alt="{$site.keywords}" src="_home_/assets/img/en.jpg" class="y-mga y-w100 box9-img">
+              <img alt="{$site.keywords}" src="_home_/assets/img/mobile/m3.jpg" class="y-mga box9-img2">
+              <img alt="{$site.keywords}" src="_home_/assets/img/mobile/m5.jpg" class="y-mga box9-img3">
+            </div>
+          </div>
+        </div>
+        <!-- box9结束 -->
+        <!-- box10开始 -->
+        <div class="box10 y-w100 y-bg6 y-ac y-psr">
+          <img alt="{$site.keywords}" src="_home_/assets/img/10.jpg" class="y-mga box10-img y-va y-w100 img-p">
+          <img alt="{$site.keywords}" src="_home_/assets/img/mobile/m8.jpg" class="y-mga box10-img y-va y-w100 img-m">
+          <div class="box10-1 y-mga y-psa">
+            <div class="box-font box10-title font4 y-ac y-mc6">GET IN TOUCH WITH POWERON SG</div>
+            <div class="box10-from y-mga y-psa">
+              <form id="myForm">
+                <div class="y-br10 y-bg6 y-psr" style="height:50px;">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/icon2.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                  <input name="title" type="text" style="left:45px;top:0px;height:45px;width:80%;" placeholder="Company name" class="y-psa">
+                </div>
+                <div class="h15"></div>
+                <div class="y-fx">
+                  <div class="y-fx1">
+                    <div class="y-br10 y-bg6 y-psr" style="height:50px;width:98%;">
+                      <img alt="{$site.keywords}" src="_home_/assets/img/icon4.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                      <input type="text" name="truename" style="left:45px;top:0px;height:45px;width:60%;" placeholder="Name" class="y-psa">
+                    </div>
+                  </div>
+                  <div class="y-fx1 y-ar">
+                    <div class="y-br10 y-bg6 y-dyi y-psr" style="height:50px;width:98%;">
+                      <img alt="{$site.keywords}" src="_home_/assets/img/icon3.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                      <input type="text" name="mobile" style="left:45px;top:0px;height:45px;width:60%;" placeholder="Tel" class="y-psa">
+                    </div>
+                  </div>
+                </div>
+                <div class="h15"></div>
+                <div class="y-br10 y-bg6 y-psr" style="height:50px;">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/icon1.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                  <input type="text" name="city" style="left:45px;top:0px;height:45px;width:80%;" placeholder="Application Region" class="y-psa">             
+                </div>
+                <div class="h15"></div>
+                <div class="y-br10 y-bg6 y-psr" style="height:100px;">
+                  <img alt="{$site.keywords}" src="_home_/assets/img/icon5.png" style="left:15px;top:15px;" class="y-mga y-va w20 y-psa">
+                  <textarea type="textarea" name="remark" style="left:45px;top:15px;height:80px;width:80%;" placeholder="Remarks" maxlength="100" class="y-psa textarea"></textarea>
+                </div>
+              </form>
+              <div class="h15"></div>
+              <div class="y-br30 y-bg3 y-mc6 h50 y-mga y-cp box10-submit" onclick="feedback()">Submit</div>
+            </div>
+          </div>
+        </div>
+        <!-- box10结束 -->
+        {include file="index/footer" /}
+      </div>
+      <script>
+        i18next
+          .use(i18nextXHRBackend)
+          .use(i18nextBrowserLanguageDetector)
+          .init({
+            // backend: {
+            //   loadPath: '/locales/{{lng}}/{{ns}}.json'
+            // },
+            detection: {
+              order: ['cookie', 'localStorage', 'navigator'],
+              lookupCookie: 'i18next',
+              caches: ['cookie']
+            },
+            fallbackLng: 'en',
+            // lng: 'auto', // 自动检测语言
+            resources: {
+              en: { translation: {
+                home: "Home",
+                instruction: "Instruction",
+                cooperation: "Cooperation",
+                news: "News",
+                about: "AboutUs"
+              } }, // 空对象用于动态加载
+              zh: { translation: {
+                home: "首页",
+                instruction: "使用介绍",
+                cooperation: "代理加盟",
+                news: "企业动态",
+                about: "关于我们"
+              } } // 空对象用于动态加载
+            }
+          });
+      </script>
+      <script src="_home_/assets/js/footer.js"></script>
+      <!-- <script src="_home_/assets/js/top.js"></script> -->
+      <script type="text/javascript">
+        // console.log(Headerbox)
+        // const Headerbox = Headerbox
+        // const Footerbox = Footerbox
+        const App = {
+            components: {
+              // Headerbox, Footerbox
+            },
+            data() {
+              return {
+                height: window.innerWidth * 0.46,
+                height2: window.innerWidth * 1.173
+              }
+              window.addEventListener('resize', function(event) {
+                // 当窗口尺寸变化时，此回调函数会被调用
+                console.log(window.innerWidth)
+                console.log('窗口尺寸已改变！')
+                
+                // 获取新的窗口尺寸
+                if (window.innerWidth > 1199) {
+                  data.height = window.innerWidth * 0.46
+                } else {                  
+                  data.height2 = window.innerWidth * 1.173
+                }
+                
+                // 在这里可以进行相应的处理，例如重新布局或调整内容
+                console.log(`当前窗口宽度:高度: ${data.height}px`);
+              })
+            },
+          };
+          const app = Vue.createApp(App);
+          app.use(ElementPlus);
+          app.mount("#app");
+          </script>
+
+<script src="_plugs_/area/jquery.min.js"></script>
+<script src="_home_/assets/js/header.js"></script>
+      <script>
+        function showMessage(message, duration) {
+     // 创建一个弹窗元素
+     var dialog = $('<div class="dialog"></div>');
+     
+     // 添加消息内容
+     dialog.html('<p>' + message + '</p>');
+     
+     // 设置弹窗样式
+     dialog.css({
+       'position': 'fixed',
+       'top': '50%',
+       'left': '50%',
+       'transform': 'translate(-50%, -50%)',
+       'background': '#e9e9eb',
+       'padding': '20px',
+       'border-radius': '5px',
+       'color': '#F56C6C',
+       'z-index': '9999',
+       'opacity': 0.9,
+       'display': 'none'
+     });
+     
+     // 添加到页面
+     $('body').append(dialog);
+     
+     // 显示弹窗
+     dialog.fadeIn();
+     if (duration) {
+    setTimeout(function() {
+      dialog.fadeOut();
+    }, duration * 1000); // 将毫秒转换为秒
+  }
+     // 点击任何地方关闭弹窗
+    //  $(document).on('click', function(e) {
+    //    if (!$(e.target).is('.dialog')) {
+    //      dialog.fadeOut();
+    //    }
+    //  });
+   }
+        function feedback(){
+          let data = {
+            title : '' ,
+            truename : '' ,
+            mobile : '' ,
+            city : '' ,
+            remark : ''
+
+          }
+          const form = document.getElementById('myForm');
+          const formData = new FormData(form);
+          data.truename = formData.get('truename');
+          data.title = formData.get('title');
+          data.city = formData.get('city');
+          data.mobile = formData.get('mobile');
+          data.remark = formData.get('remark');
+          console.log(data)
+          if (!data.title) {
+            showMessage('Please fill in the Company name！', 3);
+            return
+          }
+          if (!data.truename) {
+            showMessage('Please fill in the Name！', 3);
+            return
+          }
+          if (!data.mobile) {
+            showMessage('Please fill in the Tel！', 3);
+            return
+          }
+          if (!data.city) {
+            showMessage('Please fill in the Application Region！', 3);
+            return
+          }
+          if (!data.remark) {
+            showMessage('Please fill in the Remarks！', 3);
+            return
+          }
+          let url = "{:url('index/feedback')}"
+
+          $.post(url,data,function(e){
+
+
+            console.log(e)
+            if(e.status == 1){
+              showMessage('Submitted successfully！', 3);
+              // 选择表单内所有需要清空的元素
+              var formElements = $('form').find('input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], textarea, select');
+
+              // 遍历并清空每个元素的值
+              formElements.each(function() {
+                $(this).val('');
+              });
+              // alert('提交成功')
+            }else{
+              showMessage('Submission failed！', 3);
+              // alert('提交失败')
+            }
+          },'json')
+        }
+      </script>
+</body>
+</html>

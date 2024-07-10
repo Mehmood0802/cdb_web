@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{$site.title},{$data.title}</title>
+    <meta name="description" content="{$site.description},{$data.title}">
+    <meta name="keywords" content="{$site.keywords}">
+    <script src="_home_/assets/i8n/i18next.min.js"></script>
+     <script src="_home_/assets/i8n/i18nextXHRBackend.min.js"></script>
+     <script src="_home_/assets/i8n/i18nextBrowserLanguageDetector.min.js"></script>
+    <link rel="stylesheet" href="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/index.css" />
+    <script src="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/vue.global.js"></script>
+    <link rel="stylesheet" href="_home_/assets/css/normalize.css">
+    <link rel="stylesheet" href="_home_/assets/css/common.css">    
+    <link rel="stylesheet" href="_home_/assets/css/header.css">
+    <link rel="stylesheet" href="_home_/assets/css/footer.css">
+    <link rel="stylesheet" href="_home_/assets/css/top.css">
+    <link rel="stylesheet" href="_home_/assets/css/detail.css">
+    <link rel="stylesheet" href="_home_/assets/swiper/swiper-bundle.min.css">
+    <script src="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/index.full.js"></script>
+</head>
+<body style="background: #F8F8F8;">
+    <div id="app" class="y-psr y-mga y-w100 y-h100">
+        {include file="index/header" /}
+        {include file="index/top" /}
+        <!-- <topbox></topbox> -->
+        <div class="box3 y-psr y-mga">
+          <!-- banner开始 -->
+          <div class="y-mga y-p y-bs y-mc9">
+            <span><a href="{:url('index/index')}" title="{$site.keywords},home">Home</a></span>
+            <span style="padding: 0 8px;">/</span>
+            <span><a href="{:url('index/news')}" title="{$site.keywords},news">News</a></span>
+            <span class="img-p" style="padding: 0 8px;">/</span>
+            <span class="img-p">{$data.title}</span>
+          </div>
+          <div class="y-bg6">
+            <!-- banner结束 -->
+            <div class="box3-header y-psr y-cp y-bg6">
+              <div class="box3-d-t y-ac y-mc7" style="line-height:30px;margin-bottom:50px;">{$data.title}</div>
+              <!-- <div class="box3-date font3 y-ac h50 y-mc9 y-ft14">{$data.create_time}</div> -->
+              <div class="box3-1 y-mc5 y-ft14">
+                {$data.content|raw}
+              </div>
+            </div>
+          </div>
+          <div class="box3-content img-p y-w100">
+            <el-carousel :interval="5000" :style="`height:312px;`" arrow="never">
+              <el-carousel-item :style="`height:400px;`">
+                <el-row :gutter="20">
+                  {volist name="list" id="vo"}
+                  <el-col :lg="8" :md="24">
+                    <div class="box3-content1 y-w100 y-cp y-bs y-bg6">
+                      <a href="{:url('index/detail')}?id={$vo.id}" target="_blank" title="{$site.keywords},{$vo.title}">
+                      <img src="{$vo.img}" class="box3-content1-img y-w100" alt="" style="height:200px;">
+                      <div class="y-bs y-w100" style="padding: 15px 10px;">
+                        <div class="box3-title y-e1 y-mc7 y-ft14">{$vo.title}</div>
+                        <div class="box3-text y-e1 y-mc5 y-ft12">{$vo.remark}</div>
+                        <div class="y-fx">
+                          <!-- <div class="y-fx1 y-al box3-detail-date y-mc9 y-ft12">{$vo.create_time}</div> -->
+                          <div class="y-fx1 y-ar box3-test-detail">more<img src="_home_/assets/img/n10.png" class="y-mgl" alt=""></div>
+                        </div>
+                      </div>
+                      </a>
+                    </div>
+                  </el-col>
+                  {/volist}
+                </el-row>
+              </el-carousel-item>
+            </el-carousel>
+          </div>
+          <div class="box3-content img-m">
+            <el-row :gutter="0">
+              {volist name="list" id="vo"}
+              <el-col :lg="8" :md="24" :sm="24" :xs="24">
+                <div class="box3-content1 y-w100 y-cp y-p y-bs">
+                  <div class="y-bg6">
+                    <a href="{:url('index/detail')}?id={$vo.id}" target="_blank" title="{$site.keywords},{$data.title}" >
+                    <img src="{$vo.img}" class="box3-content1-img y-w100" alt="">
+                    <div class="y-p y-bs y-w100" style="padding: 15px 10px;">
+                      <div class="box3-title y-e1 y-fw y-ft16 y-mc7">{$vo.title}</div>
+                      <div class="box3-text y-e1 y-ft14 y-mc5">{$vo.remark}</div>
+                      <div class="y-fx">
+                        <!-- <div class="y-fx1 y-al box3-detail-date y-e1 y-mc9 y-ft14">{$vo.create_time}</div> -->
+                        <div class="y-fx1 y-ar box3-test-detail y-ft14">more<img src="_home_/assets/img/n10.png" class="y-mgl" alt=""></div>
+                      </div>
+                    </div>
+                  </a>
+                  </div>
+                </div>
+              </el-col>
+              {/volist}
+            </el-row>
+          </div>
+        </div>
+        {include file="index/footer" /}
+      </div>
+      <script>
+        i18next
+          .use(i18nextXHRBackend)
+          .use(i18nextBrowserLanguageDetector)
+          .init({
+            // backend: {
+            //   loadPath: '/locales/{{lng}}/{{ns}}.json'
+            // },
+            detection: {
+              order: ['cookie', 'localStorage', 'navigator'],
+              lookupCookie: 'i18next',
+              caches: ['cookie']
+            },
+            fallbackLng: 'en',
+            // lng: 'auto', // 自动检测语言
+            resources: {
+              en: { translation: {
+                home: "Home",
+                instruction: "Instruction",
+                cooperation: "Cooperation",
+                news: "News",
+                about: "AboutUs"
+              } }, // 空对象用于动态加载
+              zh: { translation: {
+                home: "Home",
+                instruction: "Instruction",
+                cooperation: "Cooperation",
+                news: "News",
+                about: "AboutUs"
+              } } // 空对象用于动态加载
+            }
+          });
+      </script>
+      <!-- <script src="_home_/assets/js/footer.js"></script> -->
+      <!-- <script src="_home_/assets/js/top.js"></script> -->
+      <script type="text/javascript">
+        const App = {
+          components: {
+            // Headerbox, Footerbox, Topbox
+          }
+        }
+        const app = Vue.createApp(App);
+        app.use(ElementPlus);
+        app.mount("#app");
+      </script>
+      <script src="_plugs_/area/jquery.min.js"></script>
+      <script src="_home_/assets/js/header.js"></script>
+      <script src="_home_/assets/swiper/swiper-bundle.min.js"></script>
+      <script>        
+        var mySwiper = new Swiper ('.swiper', {
+          direction: 'vertical', // 垂直切换选项
+          loop: true, // 循环模式选项
+          
+          // 如果需要分页器
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          
+          // 如果需要前进后退按钮
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          
+          // 如果需要滚动条
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        })        
+        </script>
+</body>
+</html>

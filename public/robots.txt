@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Allow: /home/
+
+Sitemap: https://www.poweron.sg/sitemap.xml

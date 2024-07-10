@@ -1,0 +1,70 @@
+<script>
+layui.use('laypage', function(){
+  var laypage = layui.laypage;
+  //执行一个laypage实例
+
+});
+//搜索
+function search(){
+  var key = $('#key').val();
+  var url = "{:url($uri)}?key="+key ;
+  window.location.href = url  
+}
+//增加
+function add(){
+  var url = "{:url($uri.'Add')}";
+  var title = "添加";
+  showBox(url,title)
+}
+//编辑
+function edit(v){
+  if(!v){
+    layer.msg('id不能为空！')
+  }
+  var url = "{:url($uri.'Edit')}?id="+v;
+  var title = "编辑";
+  showBox(url,title)
+}
+//修改状态
+function status(v){
+  var url = "{:url($uri.'Status')}"
+  var data = {id:v}
+  $.post(url,data,function(e){
+    layer.msg(e.message)
+    if(e.status == 1){
+      window.location.reload()
+    }
+  },'json')
+}
+//删除
+function del(v){
+  layer.confirm('确认要删除吗？',function(index){
+    var url = "{:url($uri.'Del')}"
+    var data = {id:v}
+    $.post(url,data,function(e){
+      layer.msg(e.message)
+      if(e.status == 1){
+        window.location.reload()
+      }
+    },'json')
+  })
+}
+//批量删除
+function delAll (argument) {
+  var data2 = tableCheck.getData();
+  if(data2.length < 1){
+    layer.msg('请勾选数据')
+    return
+  }
+  layer.confirm('确认要删除吗？'+data2,function(index){
+      var url = "{:url($uri.'Del')}" 
+      var data = {'id':data2}
+      $.post(url,data,function(e){
+        layer.msg(e.message) ;
+        if(e.status == 1){
+          window.location.reload()
+        }
+      },'json')
+  });
+}
+</script>

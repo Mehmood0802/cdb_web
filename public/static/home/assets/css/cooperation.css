@@ -1,0 +1,415 @@
+
+.textarea{
+  margin: 0; /* 移除外边距 */
+  padding: 0; /* 移除内边距 */
+  border: none; /* 移除边框 */
+  outline: none; /* 移除焦点时的轮廓 */
+  resize: none; /* 禁止调整大小 */
+  box-sizing: border-box; /* 保证宽高包含padding和border */
+  font-size: inherit; /* 继承父元素字体大小，避免默认字体大小 */
+  font-family: inherit; /* 继承父元素字体，保持一致性 */
+}
+.y-psa::placeholder {
+  color: rgba(153, 153, 153, 0.5); /* 将#yourDesiredColor替换为你想要的颜色 */
+}
+.qa-content{
+  display: none;
+}
+@media screen and (max-width: 1199px) { 
+  /* 当屏幕宽度小于或等于1149px时，这里的样式将会生效 */
+  .arr{
+    width:20px;
+  }
+  .img-p{
+    display: none;
+  }
+  .img-m{
+    display: block;
+  }
+  .box-font{
+    font-size:30px;
+    font-weight: bold;
+    padding-top: 30px;
+  }
+  .box-font, .box-font2{
+    display: inline-block;
+    text-align: center;
+  }
+  .box10-c1{
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .banner4{
+    padding: 40px;
+  }
+  .bannerbox-img1{
+    width: 100%;
+    text-align: center;
+  }
+  .bannerbox-img2{
+    width: 100%;
+    text-align: center;
+  }
+  .bannerbox-img3{
+    width: 100%;
+    text-align: center;
+  }
+  .bannerbox-img4{
+    width: 100%;
+    text-align: center;
+  }
+  .bannerbox-img1 img{
+    width: 200px;
+  }
+  .bannerbox-img2 img{
+    width: 250px;
+  }
+  .bannerbox-img3 img{
+    width: 350px;
+  }
+  .bannerbox-img4 img{
+    width: 350px;
+  }
+  .height2{
+    height: 1050px;
+  }
+  .height3{
+    height: 700px;
+  }
+  .banner2{
+    width:90%;
+    margin: auto;
+  }
+  .box-font3{
+    text-align: center;
+  }
+
+  .box4-img{
+    width:90%;
+  }
+  .box4-1{
+    width:100%;
+    padding: 0 15px 20px 15px;
+  }
+  .box4-1-1{
+    width: 100%;
+  }
+  .box4-1-2{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .box4-1-3{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .box4-1-4{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .box4-1-title{
+    width: 100%;
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .box4-content{
+    margin:auto;
+    left:0;right:0;top:40px;
+    width: 65%;
+  }
+  .box4-content2{
+    margin:auto;
+    left:0;right:0;top:40px;
+    width: 65%;
+  }
+  .box4-content3{
+    margin:auto;
+    left:0;right:0;top:40px;
+    width: 65%;
+  }
+  .box4-title{
+    font-size: 30px;text-align: center;padding: 60px 0;
+  }
+  .box4-font3{
+    font-size: 24px;text-align: left;
+  }
+  .box4-font4{
+    font-size: 20px;font-weight: 600;line-height: 35px;
+  }
+  .box4-font2{
+    width:100%;line-height:20px;text-align: left;
+  }
+  .box8{
+    padding: 60px 0;
+  }
+  .box8-font3{
+    padding:0 0 60px 0;
+  }
+  .box8-content{
+    font-size: 14px;width:90%;left:0;right:0;top:0px;bottom:0;height:60px;line-height:20px;
+  }
+  .box2-btn{
+    width: 100%;
+  }
+  .box2{
+    height:620px;
+    padding: 0 0 60px 0;
+  }
+  .box2-content {
+    width:90%;
+    top:40px;
+    left:0px;
+    right:0px;
+    height:30px;
+  }
+  .box10-from{
+    left:0px;right:0px;top: 30px;width:90%;
+  }
+  .box10{
+    height:470px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.16);
+  }
+}
+@media screen and (min-width: 1200px) { /* 1150px以上 */
+  .arr{
+    width:30px;
+  }
+  .img-p{
+    display: block;
+  }
+  .img-m{
+    display: none;
+  }
+  .fontsize{
+    font-size:20px;
+  }
+  .height2{
+    height: 800px;
+  }
+  .height3{
+    height: 700px;
+  }
+  .bannerbox-img1{
+    display: flex; /* 开启 Flexbox 布局 */
+    align-items: center; /* 让子元素在交叉轴上居中 */
+    justify-content: flex-end; /*对齐方式，此处不用修改，因为图片只有一个，所以默认居中*/
+    width: 100%;
+    text-align: right;
+  }
+  .bannerbox-img2{
+    display: flex; /* 开启 Flexbox 布局 */
+    align-items: center; /* 让子元素在交叉轴上居中 */
+    justify-content: flex-end; /*对齐方式，此处不用修改，因为图片只有一个，所以默认居中*/
+    width: 100%;
+    text-align: right;
+  }
+  .bannerbox-img3{
+    display: flex; /* 开启 Flexbox 布局 */
+    align-items: center; /* 让子元素在交叉轴上居中 */
+    justify-content: flex-end; /*对齐方式，此处不用修改，因为图片只有一个，所以默认居中*/
+    width: 100%;
+    text-align: right;
+  }
+  .bannerbox-img4{
+    display: flex; /* 开启 Flexbox 布局 */
+    align-items: center; /* 让子元素在交叉轴上居中 */
+    justify-content: flex-end; /*对齐方式，此处不用修改，因为图片只有一个，所以默认居中*/
+    width: 100%;
+    text-align: right;
+  }
+  .bannerbox-img1 img{
+    width: 300px;
+  }
+  .bannerbox-img2 img{
+    width: 300px;
+  }
+  .bannerbox-img3 img{
+    width: 450px;
+  }
+  .bannerbox-img4 img{
+    width: 350px;
+  }
+  .box-font{
+    font-size:40px;
+    font-weight: bold;
+    padding-bottom: 30px;
+  }
+  .box-font, .box-font2{
+    text-align: left;
+  }
+  .box2-btn{
+    font-size: 20px;
+    width: 50%;
+  }
+  .box-font3{
+    text-align: center;
+  }
+  .box-font4{
+    font-size: 24px;
+    text-align: center;
+  }
+  .box4{
+    height:600px;
+  }
+  .box5{
+    /* height:800px; */
+    padding: 50px 0;
+  }
+  .box4-1-1{
+    height:370px;
+  }
+  .box4-1-2{
+    text-align: left;
+  }
+  .box4-1-3{
+    text-align: center;
+  }
+  .box4-1-4{
+    text-align: right;
+  }
+  .box4-1{
+    width:1150px;
+    margin-bottom: 100px;
+  }
+  .box4-1-title{
+    width:1000px;
+    font-size:48px;
+    line-height: 70px;
+  }
+  .box4-content{
+    padding: 0 10px;
+    left:50px;
+    top:30px;
+  }
+  .box4-content2{
+    padding: 0 10px;
+    left:70px;
+    top:30px;
+  }
+  .box4-content3{
+    padding: 0 10px;
+    left:90px;
+    top:30px;
+  }
+  .box4-img{
+    width: 90%;
+  }
+  .box4-title{
+    font-size: 40px;text-align: center;padding: 80px 0 60px 0;
+  }
+  .box4-font3{
+    font-size: 24px;
+  }
+  .box4-font4{
+    font-size: 32px;font-weight: 600;line-height: 35px;
+  }
+  .box4-font2{
+    width:85%;
+    line-height:20px;
+  }
+  .box2{
+    /* height:700px; */
+    padding: 0 0 50px 0;
+  }
+
+  .box2-content {
+    width:60%;
+    top:50px;
+    left:0px;
+    right:0px;
+  }
+  .box8{
+    padding: 60px 0;
+  }
+  .box8-content{
+    width:65%;left:0;right:0;top:0px;bottom:0;line-height:50px;height:150px;font-size: 38px;
+  }
+  .box8-font3{
+    padding: 0 0 60px 0;
+  }
+  .box8-content1{
+    width: 150px;
+    top: 65px;
+    left: 40px;
+  }
+  .box8-content2{
+    width: 235px;
+    top: 119px;
+    left: 0px;
+  }
+  .box8-content3{
+    width: 170px;
+    top: 58px;
+    left: 401px;
+  }
+  .box8-content4{
+    width: 235px;
+    top: 119px;
+    left: 363px;
+  }
+  .box8-content5{
+    width: 150px;
+    top: 65px;
+    left: 792px;
+  }
+  .box8-content6{
+    width: 235px;
+    top: 119px;
+    left: 735px;
+  }
+  .box8-content7{
+    width: 150px;
+    top: 317px;
+    left: 170px;
+  }
+  .box8-content8{
+    width: 235px;
+    top: 370px;
+    left: 120px;
+  }
+  .box8-content9{
+    width: 175px;
+    top: 308px;
+    left: 523px;
+  }
+  .box8-content10{
+    width: 235px;
+    top:370px;
+    left: 495px;
+  }
+  .box8-content11{
+    width: 150px;
+    top: 317px;
+    left: 906px;
+  }
+  .box8-content12{
+    width: 235px;
+    top: 370px;
+    left: 861px;
+  }
+  .box10{
+  height:470px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.16);
+}
+.box10-1{
+  left:0px;right:0px;top: 0px;
+}
+  .box10-title{
+    font-size:52px;
+    text-align: center;
+    padding:50px 0 0px 0;
+  }
+  .box10-c1{
+    font-size: 48px;
+    font-weight: 600;
+  }
+  .box10-c2{
+    font-size: 20px;
+  }
+  .box10-from{
+    left:0px;right:0px;top: 50px;width:50%;
+  }
+}

@@ -1,0 +1,68 @@
+<div class="layui-side layui-side-menu">
+        <div class="layui-side-scroll">
+          <div class="layui-logo" lay-href="{:url('index/main')}">
+            <span>后台管理 <sub>v1.0</sub></span>
+          </div>
+          
+          <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
+            <li data-name="home" class="layui-nav-item layui-nav-itemed">
+              <a href="javascript:;" lay-tips="主页" lay-direction="2">
+                <i class="layui-icon layui-icon-home"></i>
+                <cite>主页</cite>
+              </a>
+              <dl class="layui-nav-child">
+                <dd data-name="console" class="layui-this">
+                  <a lay-href="{:url('index/main')}">控制台</a>
+                </dd>
+              </dl>
+            </li>
+
+            {volist name="list" id="vo"}
+                <li data-name="diamond" class="layui-nav-item">
+                  <a href="javascript:;" lay-tips="{$vo.title}" lay-direction="2">
+                    <i class="layui-icon {$vo.icon}"></i>
+                    <cite>{$vo.title}</cite>
+                  </a>
+                  <dl class="layui-nav-child">
+                    {volist name="vo.children" id="so"}
+                    <dd>
+                        <a lay-href="{:url($so['controller'].'/'.$so['group'])}">{$so['title']}</a>
+                    </dd>
+                    {/volist}                   
+                  </dl>
+                </li>
+            {/volist}
+
+
+            {if $admin['role_id'] == 0 }
+            <li data-name="set" class="layui-nav-item">
+              <a href="javascript:;" lay-tips="设置" lay-direction="2">
+                <i class="layui-icon layui-icon-set"></i>
+                <cite>账号管理</cite>
+              </a>
+              <dl class="layui-nav-child">
+                <dd>
+                  <a lay-href="{:url('admin/cate')}">菜单列表</a>
+                </dd> 
+                <dd>
+                  <a lay-href="{:url('admin/account')}">账号列表</a>
+                </dd>   
+                <dd>
+                  <a lay-href="{:url('admin/role')}">角色列表</a>
+                </dd>  
+                <dd>
+                  <a lay-href="{:url('admin/power')}">权限列表</a>
+                </dd>  
+                <dd>
+                  <a lay-href="{:url('admin/parameter')}">参数列表</a>
+                </dd>
+         <!--        <dd>
+                  <a lay-href="{:url('admin/back')}">数据备份</a>
+                </dd> -->
+              </dl>
+            </li>
+            {/if}
+            
+          </ul>
+        </div>
+      </div>

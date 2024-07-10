@@ -1,0 +1,8 @@
+.env
+runtime
+.DS_Store
+.idea
+uploads
+nginx.htaccess
+.htaccess
+vendor

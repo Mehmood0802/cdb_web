@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="_admin_/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="_admin_/style/admin.css" media="all">
+
+  <style type="text/css">
+    
+    .m-power-tree{ border: 1px solid #eee; margin-bottom: 100px; }
+    .m-power-tree dt{  background: #f3f3f3; line-height: 50px; height: 50px; padding: 0 10px; }
+    .m-power-tree dd{ display: flex; flex-wrap: wrap; width: 96%; padding:10px 2%; border-bottom: 1px solid #f3f3f3 ;}
+    .m-power-tree dd h3{ width: 100%; font-size: 14px; line-height: 40px; font-weight: 500; border-bottom: 1px solid #f3f3f3 ; margin-bottom: 5px;}
+    .m-power-tree dd p{ width: 20%; line-height: 30px; font-size: 12px;  }
+    .m-power-tree input{ margin-right: 5px; }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="layui-fluid">
+    <div class="layui-card">
+      <!-- <div class="layui-card-header">表单组合</div> -->
+      <div class="layui-card-body" style="padding: 15px;">
+        <form class="layui-form" action="" lay-filter="component-form-group">
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">角色名</label>
+            <div class="layui-input-inline">
+              <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入角色名" class="layui-input" value="{$data.title}">
+            </div>
+          </div>
+
+          <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">说明</label>
+            <div class="layui-input-block">
+              <textarea name="remark" placeholder="请输入说明" class="layui-textarea">{$data.remark}</textarea>
+            </div>
+          </div>   
+
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-block">
+              <input type="checkbox" {eq name="data.status" value='1'}checked=""{/eq} name="status" lay-skin="switch" lay-filter="component-form-switchTest" lay-text="ON|OFF">
+            </div>
+          </div>
+
+          {$powerTree|raw}
+
+
+          <div class="layui-form-item layui-layout-admin">
+            <div class="layui-input-block">
+              <div class="layui-footer" style="left: 0; z-index: 100">
+                <input type="hidden" name="id" value="{$data.id}" />
+                <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+
+
+      </div>
+    </div>
+  </div>
+
+    
+{include file="index:footer" /}
+<script>
+
+layui.use(['form','layer'], function(){
+  var $ = layui.$
+  ,form = layui.form
+  ,layer = layui.layer
+
+  /* 自定义验证规则 */
+    form.verify({
+      title: function(value){
+        if(value.length < 1){
+          return '不能为空';
+        }
+      }
+
+    });
+    
+    /* 监听提交 */
+    form.on('submit(component-form-demo1)', function(data){
+      var url = "{:url($uri)}" ;
+      var datas = data.field ;
+      $.post(url,datas,function(e){
+        layer.msg(e.message)
+        if(e.status == 1){
+          setTimeout(function(){
+            var index = parent.layer.getFrameIndex(window.name);  //获得frame索引
+            parent.layer.close(index);    //关闭当前frame
+            window.parent.location.reload();     //刷新页面
+          },1000)  
+        }
+      },'json')
+      return false;
+    });
+
+    roleChange(form)
+    roleChildChange(form)
+
+})
+
+
+
+//选择
+change()
+function change(){
+  var a = $('.m-power-tree dl')
+  // console.log(a.length)
+  $(a).each(function(){
+
+    //选中状态
+    $(this).children('dt').click(function(){
+      //一级
+      var dt = $(this).children('input') 
+      var status = $(dt).is(':checked')
+      var dd = $(this).parent().children('dd')
+
+      if(status == true){
+        $(dt).attr('checked', 'checked')
+        $(dd).find('input').attr('checked', 'checked')
+        $(dd).find('input').prop('checked', true )
+
+      }else{
+        $(dt).removeAttr('checked')
+        $(dd).find('input').removeAttr('checked')
+        $(dd).find('input').prop('checked', false )
+      }
+       total()
+       total_cate()
+
+
+    })
+
+    //二级
+    var dd_t = $(this).children('dd').children('h3') ;
+
+    $(dd_t).each(function(){
+      $(this).click(function(){
+          var h3 = $(this).children('input') ;
+          var h3_status = $(h3).is(':checked') ;
+          var p = $(this).parent().children('p') ;
+
+          if(h3_status == true){
+            $(h3).attr('checked', 'checked')
+            $(p).find('input').attr('checked', 'checked')
+            $(p).find('input').prop('checked', true )
+
+          }else{
+            $(h3).removeAttr('checked')
+            $(p).find('input').removeAttr('checked')
+            $(p).find('input').prop('checked', false )
+          }
+           total()
+           total_cate()
+
+      })
+
+    })
+
+    //单选
+    var pp = $(this).children('dd').children('p').find('input')
+    $(pp).each(function(){
+      $(this).click(function(){
+        var pp_status = $(this).is(':checked') ;
+
+        if(pp_status == true){
+            $(this).attr('checked', 'checked')
+
+        }else{
+          $(p).removeAttr('checked')
+        }
+         total()
+         total_cate()
+
+      })
+
+    })
+
+
+  })
+
+
+}
+
+//统计权限
+function total(){
+  var all = $('.m-power-tree dl').find('input[checked="checked"]') 
+  var str = ''
+  $(all).each(function(){
+    var v = $(this).attr('data-id') 
+    if(v != 'undefined' && v != null){
+      str += v+','
+    }
+  })
+
+  // console.log(str)
+
+
+  var a = str.substr(0,str.length-1)
+  $('#power_ids').val(a)
+
+}
+
+//统计菜单
+function total_cate(){
+  var all = $('.m-power-tree dt').find('input[checked="checked"]') 
+  var str = ''
+  $(all).each(function(){
+    var v = $(this).val() 
+    if(v != 'undefined' && v != null){
+      str += v+','
+    }
+  })
+
+  var all2 = $('.m-power-tree h3').find('input[checked="checked"]') 
+  $(all2).each(function(){
+    var v = $(this).val() 
+    if(v != 'undefined' && v != null){
+      str += v+','
+    }
+  })
+
+
+  // console.log(str)
+
+  var a = str.substr(0,str.length-1)
+  $('#cate_ids').val(a)
+  
+}
+
+
+
+//2022-5-22 补充
+
+function roleChange(form){
+  var a =  $('.m-bb')
+  $(a).each(function(){
+      $(this).click(function(){
+        let s = $(this).children('input').is(':checked') ;
+        //下层
+        let c = $(this).parents().children('div').eq(1).find('.m-cc').find('input')
+        if(s){
+          $(c).each(function(){
+            $(this).attr('checked','true')
+            form.render('checkbox');
+          })
+
+        }else{
+          $(c).each(function(){
+            $(this).removeAttr('checked')
+            form.render('checkbox');
+          })
+        }
+      })
+  })
+}
+
+
+function roleChildChange(form){
+
+  var a =  $('.m-cc')
+  $(a).each(function(){
+    $(this).click(function(){
+        let s = $(this).children('input').is(':checked') ;
+
+        console.log(s)
+        //上层
+        let c = $(this).parents().parents().children().eq(0).find('input') ;
+
+        if(s){
+          $(c).attr('checked', 'true')
+          form.render('checkbox');
+        }
+
+        
+
+       
+      })
+
+  })
+
+
+}
+
+
+</script>
+
+
+
+</body>
+</html>

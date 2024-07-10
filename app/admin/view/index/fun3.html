@@ -1,0 +1,101 @@
+<script>
+layui.use('laypage', function(){
+  var laypage = layui.laypage;
+  //执行一个laypage实例
+  laypage.render({
+    elem: 'laypage' //注意，这里的 test1 是 ID，不用加 # 号
+    ,count: "{$list->total()}" //数据总数，从服务端得到
+    ,curr : "{$page}"
+    ,jump: function(obj,first){
+      //首次不执行
+      if(!first){
+        //do something
+        var key = $('#key').val();
+        var status = $('#status').val()
+        var cate_id = $('#cate_id').val()
+        var day = $('#day').val()
+        var member_id = $('#member_id').val()
+        var minprice = $('#min-price').val()
+        var maxprice = $('#max-price').val()
+        var time_start = $('#time_start').val()
+        var time_end = $('#time_end').val()
+
+        window.location.href = "{:url($uri)}?page="+obj.curr + '&key='+key + "&status="+status + '&day='+day + '&member_id=' + member_id + '&min='+minprice + '&max=' + maxprice + '&cate_id=' + cate_id + '&time_start=' + time_start + '&time_end=' + time_end ;
+      }
+    }
+  });
+});
+//搜索
+function search(){
+  var key = $('#key').val();
+  var status = $('#status').val()
+  var cate_id = $('#cate_id').val()
+  var day = $('#day').val()
+  var member_id = $('#member_id').val()
+  var minprice = $('#min-price').val()
+  var maxprice = $('#max-price').val()
+  var time_start = $('#time_start').val()
+  var time_end = $('#time_end').val()
+
+
+  var url = "{:url($uri)}?key="+key + "&status="+status + '&day='+day + '&member_id=' + member_id + '&min='+minprice + '&max=' + maxprice + '&cate_id=' + cate_id + '&time_start=' + time_start + '&time_end=' + time_end ;
+  window.location.href = url  
+}
+//增加
+function add(){
+  var url = "{:url($uri.'Add')}";
+  var title = "添加";
+  showBox(url,title)
+}
+//编辑
+function edit(v){
+  if(!v){
+    layer.msg('id不能为空！')
+  }
+  var url = "{:url($uri.'Edit')}?id="+v;
+  var title = "编辑";
+  showBox(url,title)
+}
+//修改状态
+function status(v){
+  var url = "{:url($uri.'Status')}"
+  var data = {id:v}
+  $.post(url,data,function(e){
+    layer.msg(e.message)
+    if(e.status == 1){
+      window.location.reload()
+    }
+  },'json')
+}
+//删除
+function del(v){
+  layer.confirm('确认要删除吗？',function(index){
+    var url = "{:url($uri.'Del')}"
+    var data = {id:v}
+    $.post(url,data,function(e){
+      layer.msg(e.message)
+      if(e.status == 1){
+        window.location.reload()
+      }
+    },'json')
+  })
+}
+//批量删除
+function delAll (argument) {
+  var data2 = tableCheck.getData();
+  if(data2.length < 1){
+    layer.msg('请勾选数据')
+    return
+  }
+  layer.confirm('确认要删除吗？'+data2,function(index){
+      var url = "{:url($uri.'Del')}" 
+      var data = {'id':data2}
+      $.post(url,data,function(e){
+        layer.msg(e.message) ;
+        if(e.status == 1){
+          window.location.reload()
+        }
+      },'json')
+  });
+}
+</script>
