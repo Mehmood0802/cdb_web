@@ -55,9 +55,6 @@ Class Controller extends BaseController{
 		$this->isPost = strtolower($this->request->method()) == 'post' ? true : false ;
 		$this->postData = $this->request->post(empty($key) ? '' : "{$key}/a");
 
-
-
-
 		//status数据处理
 		if(array_key_exists('status',$this->postData)){
 			if($this->postData['status'] == 'on'){
@@ -67,18 +64,7 @@ Class Controller extends BaseController{
 				$this->postData['status'] = 0 ;
 			}
 		}
-
-
-		
 		//删除上传文件
 		unset($this->postData['file']);
-
-
-
 	}
-
-
-
-
-
 }

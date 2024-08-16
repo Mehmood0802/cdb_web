@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{$site.title},news</title>
-    <meta name="description" content="{$site.description},news">
+    <title>{if isset($title) && $title != ''}{$title}{else} {$site.title}_home{/if}</title>
+    <meta name="description" content="{if isset($description) && $description != ''}{$description}{else} {$site.description}{/if}">
     <meta name="keywords" content="{$site.keywords}">
     <script src="_home_/assets/i8n/i18next.min.js"></script>
      <script src="_home_/assets/i8n/i18nextXHRBackend.min.js"></script>
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="_home_/assets/css/footer.css">
     <link rel="stylesheet" href="_home_/assets/css/top.css">
     <link rel="stylesheet" href="_home_/assets/css/news.css">
+    {include file="index/meta" /}
     <script src="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/index.full.js"></script>
 </head>
 <body style="background: #F8F8F8;">
@@ -25,18 +26,20 @@
         {include file="index/top" /}
         <!-- <topbox></topbox> -->
         <!-- banner开始 -->
-        <div class="y-psr box2">
+        <div class="y-psr box2 news-page">
           <img alt="{$site.keywords}" src="_home_/assets/img/n1.jpg" class="y-w100 y-h100 y-va img-p">
           <img alt="{$site.keywords}" src="_home_/assets/img/mobile/u8.jpg" class="y-w100 y-h100 y-va img-m">
-          <div class="y-ac y-mc6 y-psa y-mga box2-content font4">News Center</div>      
+          <h1 class="y-ac y-mc6 y-psa y-mga box2-content font4">News & Collaboration</h1>
+          <div class="y-ac y-mc6 y-psa y-mga box2-content breadcrumbs font4"><a href="/">Home </a> <span>/ News</span></div>
+
         </div>
         <!-- banner结束 -->
         <div class="box3 y-psr y-mga">
           
           <div class="box3-header y-psr y-cp">
             <a href="{:url('index/detail')}?id={$data.id}" target="_blank" title="{$site.keywords},{$data.title}">
-              <img src="{$data.img}" alt="" class="y-psa box3-img1 y-w100 img-p y-bs" >
-              <img src="{$data.img}" alt="" class="box3-img1 y-w100 img-m y-bs" >
+              <img src="{$data.img}" alt="{$data.title}" class="y-psa box3-img1 y-w100 img-p y-bs" >
+              <img src="{$data.img}" alt="{$data.title}" class="box3-img1 y-w100 img-m y-bs" >
               <div class="y-psa box3-1 y-p y-bs y-mc6 img-p">
                 <div class="box3-d-t">{$data.title}</div>
                 <div class="box3-detail font3">
@@ -66,14 +69,14 @@
                 <div class="box3-content1 y-w100 y-cp y-bs y-bg6">
                   <a href="{:url('index/detail')}?id={$vo.id}" target="_blank" title="{$site.keywords},{$data.title}" >
                     <div class="y-w100 y-ofh box3-content1-img1">
-                      <img src="{$vo.img}" class="box3-content1-img y-w100" alt="">
+                      <img src="{$vo.img}" class="box3-content1-img y-w100" alt="{$vo.title}">
                     </div>
                     <div class="y-p y-bs y-w100">
                       <div class="box3-title y-e1">{$vo.title}</div>
                       <div class="box3-text y-e1">{$vo.remark}</div>
                       <div class="y-fx">
                         <!-- <div class="y-fx1 y-al box3-detail-date y-e1">{$vo.create_time}</div> -->
-                        <div class="y-fx1 y-ar box3-test-detail">more<img src="_home_/assets/img/n10.png" class="y-mgl" alt=""></div>
+                        <div class="y-fx1 y-ar box3-test-detail">more<img src="_home_/assets/img/n10.png" class="y-mgl" alt="More Icon"></div>
                       </div>
                     </div>
                   </a>

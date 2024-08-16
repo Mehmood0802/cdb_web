@@ -1,5 +1,7 @@
-User-agent: *
-Disallow: /admin/
-Allow: /home/
-
-Sitemap: https://www.poweron.sg/sitemap.xml
+User-agent: *		
+Disallow: /wp-login		
+Disallow: /wp-admin		
+Disallow: /author/admin		
+Allow: /wp-admin/admin-ajax.php		
+		
+Sitemap: https://poweron.com.sg/sitemap.xml		

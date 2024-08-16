@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{$site.title},how to use</title>
-        <meta name="description" content="{$site.description},hot to use">
+        <title>{if isset($title) && $title != ''}{$title}{else} {$site.title}_home{/if}</title>
+        <meta name="description" content="{if isset($description) && $description != ''}{$description}{else} {$site.description}{/if}">
         <meta name="keywords" content="{$site.keywords}">
         <script src="_home_/assets/i8n/i18next.min.js"></script>
         <script src="_home_/assets/i8n/i18nextXHRBackend.min.js"></script>
@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="_home_/assets/css/footer.css">
         <link rel="stylesheet" href="_home_/assets/css/top.css">
         <link rel="stylesheet" href="_home_/assets/css/instruction.css">
+        {include file="index/meta" /}
         <script src="https://cdb2024.oss-ap-southeast-1.aliyuncs.com/www/index.full.js"></script>
     </head>
     <body>
@@ -36,9 +37,12 @@
             </div>
         <!-- banner结束 -->
         <!-- box1开始 -->
+        <div class="box3-1 y-mga y-p y-bs y-mc9 font4">
+          <a href="/">Home</a> / How to Use
+        </div>
         <div class="box7 y-w100 y-bg6 y-ac">
             <div class="box3-1 y-mga">
-              <div class="box-font box7-font font4 y-ac y-mc7">How to Use</div>
+              <h1 class="box-font box7-font font4 y-ac y-mc7 remove-margin">How to Use</h1>
               <img alt="{$site.keywords}" src="_home_/assets/img/mobile/u4.png" class="y-mga box7-img img-m">
               <div class="h30 img-m"></div>
               <img alt="{$site.keywords}" src="_home_/assets/img/mobile/u5.png" class="y-mga box7-img img-m">

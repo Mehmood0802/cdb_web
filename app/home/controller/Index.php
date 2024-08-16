@@ -2,97 +2,159 @@
 declare(strict_types = 1);
 
 namespace app\home\controller ;
-
 use app\home\Controller ;
 use think\facade\View ;
 use think\facade\Db ;
-
-
+use think\facade\Request;
 use app\home\model\Site ;
 use app\home\model\SiteArticle ;
 use app\home\model\SiteFeedback ;
 
-
 Class Index extends Controller{
 
-
+    function handleRedirection($url)
+    {
+        $parsedUrl = parse_url($url);
+        $path = $parsedUrl['path'] ?? '';
+        $query = $parsedUrl['query'] ?? '';
+        if (preg_match('/[A-Z]/', $path)) {
+            $path = strtolower($path);
+        }
+        if (!preg_match('/\.html$/i', $path)) {
+            $path .= '.html';
+        }
+        $newUrl = $path;
+        if ($query) {
+            $newUrl .= '?' . $query;
+        }
+        if ($newUrl !== $url) {
+            return redirect($newUrl, 301);
+        }
+        return null;
+    }    
+    
     public function index(){
-
         View::assign('site', Site::getOne(1) ) ;
-
         View::assign('tabs', 'index' ) ;
-        
+        View::assign('title', "singapore mobile power bank leasing,singapore mobile battery leasing,singapore power bank leasing services,poweron sg_home");
+        View::assign('description', "we provide professional services such as shared power banks, shared charging stations, shared power leasing, and shared fee services for Singapore, as well as local mobile power bank leasing, mobile battery leasing, and power bank leasing services in Singapore. Business Introduction of Singapore Power Technology Private Limited (Company)., tel:+65 6957 7060");
+        View::assign('canonical',  Request::domain());
         return view() ;
     }
 
 
     public function instruction(){
-
+        if ($redirect = $this->handleRedirection(Request::url())) {
+            return $redirect;
+        }
         View::assign('site', Site::getOne(1) ) ;
-
         View::assign('tabs', 'instruction' ) ;
-
+        View::assign('title', "Mobile Power Supply Leasing Process | PowerOn SG");
+        View::assign('description', "Learn how to lease mobile power supplies with PowerOn SG. Easy steps for renting, using, and returning power banks to stay charged on the go.");
+        View::assign('canonical',  Request::url(true));
         return view() ;
     }
 
 
 
     public function contact(){
-        
+        if ($redirect = $this->handleRedirection(Request::url())) {
+            return $redirect;
+        }
         View::assign('site', Site::getOne(1) ) ;
-
         View::assign('tabs', 'contact' ) ;
-
+        View::assign('title', "Contact PowerOn SG | Mobile Charging Station Rentals");
+        View::assign('description', "Get in touch with PowerOn SG for mobile phone charging station rentals in Singapore: fast service, and reliable solutions. Contact us today!");
+        View::assign('canonical',  Request::url(true));
         return view() ;
     }
 
-
-
-    
-
-
-    public function about(){
-
+    public function products(){
+        if ($redirect = $this->handleRedirection(Request::url())) {
+            return $redirect;
+        }
         View::assign('site', Site::getOne(1) ) ;
-
-        View::assign('tabs', 'about' ) ;
-
+        View::assign('tabs', 'products' ) ;
+        View::assign('title', "Our Products | PowerOn SG");
+        View::assign('description', "Get in touch with PowerOn SG for mobile phone charging station rentals in Singapore: fast service, and reliable solutions. Contact us today!");
+        View::assign('canonical',  Request::url(true));
         return view() ;
     }
+    public function about(){
+        if ($redirect = $this->handleRedirection(Request::url())) {
+            return $redirect;
+        }
+        View::assign('site', Site::getOne(1) ) ;
+        View::assign('tabs', 'about' ) ;
+        View::assign('title', "About Us - PowerOn SG: Leading Charging Solutions");
+        View::assign('description', "PowerOn SG provides convenient mobile phone charging solutions with cutting-edge technology and reliable service. Stay powered up with our stations!");
+        View::assign('canonical',  Request::url(true));
+        return view() ;
+    }
+
+    public function notfound()
+    {
+        View::assign('site', Site::getOne(1) ) ;
+        View::assign('tabs', 'notfound' ) ;
+        View::assign('title', "404");
+        View::assign('description', "404");
+        return view() ;
+    }
+
+
+    public function thanks(){
+        if ($redirect = $this->handleRedirection(Request::url())) {
+            return $redirect;
+        }
+        View::assign('site', Site::getOne(1) ) ;
+        View::assign('tabs', 'thanks' ) ;
+        View::assign('title', "Thank You - PowerOn SG: Leading Charging Solutions");
+        View::assign('description', "PowerOn SG provides convenient mobile phone charging solutions with cutting-edge technology and reliable service. Stay powered up with our stations!");
+        View::assign('canonical',  Request::url(true));
+        return view() ;
+    }
+
 
 
     public function news(){
-        
+        if ($redirect = $this->handleRedirection(Request::url())) {
+            return $redirect;
+        }
         View::assign('site', Site::getOne(1) ) ;
-
         $data = SiteArticle::getOneW( ['is_home'=>1,'status'=>1] );
         View::assign('data', $data ) ;
-
-
         $list = SiteArticle::getListPO(['cate_id'=>1,'status'=>1],'*','id desc',15) ;
         View::assign('list', $list ) ;
         View::assign('tabs', 'news' ) ;
 
-
-
+        View::assign('title', "News Center Collaboration & Updates | PowerOn SG");
+        View::assign('description', "Stay updated with the latest news from PowerOn SG and explore collaboration opportunities for mobile phone charging solutions in Singapore.");
+        View::assign('canonical',  Request::url(true));
         return view() ;
     }
 
 
     public function detail(){
-
+        if ($redirect = $this->handleRedirection(Request::url())) {
+            return $redirect;
+        }
         View::assign('site', Site::getOne(1) ) ;
-
-
         $data = SiteArticle::getOne(input('id')) ;
+        if (empty($data)) {
+            return redirect('/home/index/news.html');
+        }
+        $title = $data['title'] ?? '';
+        $contentdata = $data['content'] ?? '';
         View::assign('data', $data ) ;
-
-
         $list =  SiteArticle::getListPO(['cate_id'=>1,'status'=>1],'*','id desc',3) ;
         View::assign('list', $list ) ;
-
-
         View::assign('tabs', 'news' ) ;
+        View::assign('title', 'PowerOn SG ' . $title );
+        $content = preg_replace('/\s+/', ' ', strip_tags(preg_replace('/<img[^>]+\>/i', '', $contentdata)));
+        $truncatedContent = mb_substr($content, 0, 150);
+        View::assign('description', $truncatedContent);
+        $canonicalUrl = strtok(Request::url(true), '?');
+        View::assign('canonical', $canonicalUrl);
         return view() ;
     }
 
@@ -216,17 +278,4 @@ Class Index extends Controller{
 
 
     }
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
