@@ -36,8 +36,8 @@ Class Index extends Controller{
     public function index(){
         View::assign('site', Site::getOne(1) ) ;
         View::assign('tabs', 'index' ) ;
-        View::assign('title', "singapore mobile power bank leasing,singapore mobile battery leasing,singapore power bank leasing services,poweron sg_home");
-        View::assign('description', "we provide professional services such as shared power banks, shared charging stations, shared power leasing, and shared fee services for Singapore, as well as local mobile power bank leasing, mobile battery leasing, and power bank leasing services in Singapore. Business Introduction of Singapore Power Technology Private Limited (Company)., tel:+65 6957 7060");
+        View::assign('title', "Mobile Portable Charging Station Rental | Shared PowerBank | PowerOn SG");
+        View::assign('description', "PowrOn SG offers portable mobile phone charger rental, charging stations & portable shared power bank rentals for events or daily use. Stay powered & Rent now!");
         View::assign('canonical',  Request::domain());
         return view() ;
     }
