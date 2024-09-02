@@ -11,7 +11,7 @@
                           <div class="y-mc8 y-ft16">{$site.tel}</div> 
                         </template>
                         <div>
-                          <a href="tel:6957 7060" style="text-decoration:none;" >
+                          <a href="tel:<?php echo str_replace([' '], '', $site['tel']); ?>" style="text-decoration:none;" >
                             <img alt="{$site.keywords}" src="_home_/assets/img/tel.png" class="y-mga footer-box11-img2 y-va">
                             <div class="y-ft14 y-mc3 footer-box11-text">Moblie</div>
                           </a>
@@ -24,8 +24,10 @@
                           <div class="y-mc8 y-ft16">{$site.email}</div>                          
                         </template>
                         <div>
+                          <a href="mailto:{$site.email}" style="text-decoration:none;" >
                           <img alt="{$site.keywords}" src="_home_/assets/img/email.png" class="y-mga footer-box11-img2 y-va">
                           <div class="y-ft14 y-mc3 footer-box11-text">Email</div>
+                          </a>
                         </div>
                       </el-tooltip>
                     </div>
@@ -46,8 +48,10 @@
                         <div class="y-mc8 y-ft16 y-ac">{$site.whatsapp}</div>
                       </template>
                       <div>
-                        <img alt="{$site.keywords}" src="_home_/assets/img/join.png" class="y-mga footer-box11-img2 y-va">
-                        <div class="y-ft14 y-mc3 footer-box11-text">WhatsApp</div>
+                        <a href="https://wa.me/<?php echo str_replace([' ', '+'], '', $site['whatsapp']); ?>" target="_blank" style="text-decoration:none;" >
+                          <img alt="{$site.keywords}" src="_home_/assets/img/join.png" class="y-mga footer-box11-img2 y-va">
+                          <div class="y-ft14 y-mc3 footer-box11-text">WhatsApp</div>
+                        </a>
                       </div>
                     </el-tooltip>
                   </div>
@@ -114,7 +118,7 @@
                           <div class="y-mc8 y-ft16 y-ac">{$site.tel}</div> 
                         </template>
                         <div>
-                        <a href="tel:6957 7060" style="text-decoration:none;" >
+                        <a href="tel:<?php echo str_replace([' '], '', $site['tel']); ?>" style="text-decoration:none;" >
                           <img alt="{$site.keywords}" src="_home_/assets/img/tel.png" class="y-mga footer-box11-img2 y-va">
                           <div class="y-ft14 y-mc3 footer-box11-text">Moblie</div>
                         </a>
@@ -127,8 +131,10 @@
                           <div class="y-mc8 y-ft16">{$site.email}</div>                          
                         </template>
                         <div>
+                          <a href="mailto:{$site.email}" style="text-decoration:none;" >
                           <img alt="{$site.keywords}" src="_home_/assets/img/email.png" class="y-mga footer-box11-img2 y-va">
                           <div class="y-ft14 y-mc3 footer-box11-text">Email</div>
+                        </a>
                         </div>
                       </el-tooltip>
                     </div>
@@ -149,8 +155,10 @@
                         <div class="y-mc8 y-ft16 y-ac">{$site.whatsapp}</div>
                       </template>
                       <div>
+                        <a href="https://wa.me/<?php echo str_replace([' ', '+'], '', $site['whatsapp']); ?>" target="_blank" style="text-decoration:none;" >
                         <img alt="{$site.keywords}" src="_home_/assets/img/join.png" class="y-mga footer-box11-img2 y-va">
                         <div class="y-ft14 y-mc3 footer-box11-text">WhatsApp</div>
+                        </a>
                       </div>
                     </el-tooltip>
                   </div>
